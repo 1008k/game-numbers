@@ -18,9 +18,8 @@
 ## Getting Started
 1. このリポジトリを新規プロジェクト用にコピーする
 2. `docs/initial-brief.md` を粗く埋める
-3. `SETUP_PROMPT.md` をそのまま AI エージェントに渡す
-4. エージェントに `README.md`、`docs/project-spec.md`、`AGENTS.md`、`docs/coding-rules.md` を具体化させる
-5. 文書が固まってから、必要な実装や技術スタックの初期化に進む
+3. AI エージェントに、このリポジトリを読ませたうえで `README.md`、`docs/project-spec.md`、`AGENTS.md`、`docs/coding-rules.md` を具体化させる
+4. 文書が固まってから、必要な実装や技術スタックの初期化に進む
 
 ## Repository Layout
 - `README.md` : このテンプレートの使い方
@@ -28,7 +27,6 @@
 - `docs/project-spec.md` : 仕様と受け入れ条件のひな形
 - `docs/coding-rules.md` : 人間向けの実装判断ルール
 - `AGENTS.md` : AI エージェント向けの補助文書
-- `SETUP_PROMPT.md` : 初回セットアップを依頼するプロンプト例
 - `CONTRIBUTING.md` : 変更提案時の補助文書（任意）
 - `CHANGELOG.md` : 重要な変更履歴（任意）
 
