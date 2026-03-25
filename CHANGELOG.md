@@ -8,6 +8,8 @@
 - テンプレートの位置づけを docs-first な開発プロジェクト向けに整理
 - `README.template.md` と `SETUP_PROMPT.md` を削除し、導線を `README.md` と `docs/initial-brief.md` に集約
 - `Web` 固定の説明を外し、複数のプロジェクト種別に対応できる文面へ調整
+- 公開成果物は CI で作成し、ローカルのビルド成果物を Git 管理しない方針を追記
+- `docs/coding-rules.md` の設計原則を整理し、重複するルールを統合
 
 ### Added
 - `docs/initial-brief.md` を追加

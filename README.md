@@ -41,6 +41,7 @@
 - 仕様と実装がぶつかったら、先に `docs/project-spec.md` と `docs/coding-rules.md` のどちらを更新すべきか整理する
 - 技術固有メモは必要になってから追加し、最初から文書を増やしすぎない
 - 実装コマンドは、採用スタックが決まってから `README.md` と `AGENTS.md` に確定させる
+- 公開用の成果物が必要な場合は、ローカル生成物ではなく CI で作成・配布する
 
 ## Contributing
 改善方針は [CONTRIBUTING.md](./CONTRIBUTING.md) を参照してください。
