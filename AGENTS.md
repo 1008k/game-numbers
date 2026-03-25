@@ -1,6 +1,6 @@
 # AGENTS.md
 
-このファイルはエージェント向けの入口です。実装判断は `docs/coding-rules.md`、仕様は `docs/project-spec.md`、セットアップと運用は `README.md` を参照してください。
+このファイルはエージェント向けの入口です。実装判断は `docs/coding-rules.md`、仕様は `docs/project-spec.md`、コード構造は `ARCHITECTURE.md`、重要な設計判断は `docs/adr/`、セットアップと運用は `README.md` を参照してください。
 
 ## プロジェクト要約
 - このリポジトリは、開発プロジェクトの初回要件整理と文書整備をスムーズに進めるための `docs-first` テンプレートです。
@@ -26,6 +26,6 @@
 - コミットはユーザーの明示指示がある場合のみ行う。
 
 ## 維持対象（プロジェクト固有）
-- 主要ファイル: `README.md`, `CONTRIBUTING.md`, `CHANGELOG.md`, `docs/initial-brief.md`, `docs/project-spec.md`, `docs/coding-rules.md`
+- 主要ファイル: `README.md`, `ARCHITECTURE.md`, `CONTRIBUTING.md`, `CHANGELOG.md`, `docs/initial-brief.md`, `docs/project-spec.md`, `docs/coding-rules.md`, `docs/adr/`
 - 重要な命名規則: `file_case は kebab-case`, `識別子の命名規則は採用言語に合わせて明記する`
 - 互換性要件: プロジェクト種別と採用スタック決定後に具体化する
