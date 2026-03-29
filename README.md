@@ -41,6 +41,13 @@
 - 実装開始時の既定案は、要件に最も近い最小構成を選ぶ
 - Web アプリとして始める場合の例のひとつは `Bun + Vite + TypeScript`
 
+## AI Agent Workflow
+- 実装や文書更新を始める前に、`docs/initial-brief.md` の不足事項と前提を整理する。
+- 変更が複数ファイルにまたがる、または要件が曖昧な場合は、先に探索と短い計画を行ってから実装する。
+- 受け入れ条件や完了条件を書くときは、何をもって完了とみなすかだけでなく、どう確認するかも合わせて明記する。
+- AI エージェント向けの常設ルールは短く保ち、詳細は `AGENTS.md`、`docs/project-spec.md`、`docs/coding-rules.md` に集約する。
+- Claude Code を使う場合は `CLAUDE.md` を入口として扱い、この `README.md` と関連文書を参照させる。
+
 ## Maintenance Notes
 - 仕様と実装がぶつかったら、先に `docs/project-spec.md` と `docs/coding-rules.md` のどちらを更新すべきか整理する
 - 技術固有メモは必要になってから追加し、最初から文書を増やしすぎない
