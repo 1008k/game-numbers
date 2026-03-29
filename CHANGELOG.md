@@ -1,7 +1,6 @@
 # Changelog
 
-このリポジトリの重要な変更を記録します。形式は Keep a Changelog、バージョニングは Semantic Versioning を前提にします。
-GitHub Release 向けの changelog は、利用者から見える振る舞い、互換性、修正内容、連携への影響を中心に記録し、内部保守やローカル運用の詳細は、他者への影響がない限り commit や PR に記録します。
+このリポジトリの重要な変更を記録します。形式は Keep a Changelog、バージョニングは Semantic Versioning を前提にします。GitHub Release 向けの changelog は、利用者から見える振る舞い、互換性、修正内容、連携への影響を中心に、各項目を短く「何がよくなったか」が分かる形で記録します。内部保守、ローカル運用、内部リファクタ、コード構造の詳細は、利用者への影響を理解するために必要な場合を除き、commit や PR に記録します。
 
 ## [Unreleased]
 ### Changed
