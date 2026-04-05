@@ -1,14 +1,14 @@
 # Project Starter Template
 
-このテンプレートは、開発プロジェクトを AI コーディングエージェントと立ち上げるための `docs-first` な土台です。
+このテンプレートは、開発プロジェクトをAIコーディングエージェントと立ち上げるための `docs-first` な土台です。
 最初から完成済みのアプリ実装を含むものではなく、要件・仕様・運用ルールを先に固めることを目的とします。
-要件整理から AI エージェントと進めたい人向けのテンプレートです。
+要件整理からAIエージェントと進めたい人向けのテンプレートです。
 
 ## Overview
 - 新規の開発プロジェクトを、要件整理から素早く始めたい
 - 仕様や非目的を先に明文化して、実装時の迷いを減らしたい
-- AI エージェントに初回セットアップを任せたいが、判断基準は人間が握りたい
-- Web アプリ、CLI、ライブラリ、社内ツールなどに流用したい
+- AIエージェントに初回セットアップを任せたいが、判断基準は人間が握りたい
+- Webアプリ、CLI、ライブラリ、社内ツールなどに流用したい
 
 ## What This Repository Provides
 - 初回要件整理のためのブリーフ
@@ -20,7 +20,7 @@
 ## Getting Started
 1. このリポジトリを新規プロジェクト用にコピーする
 2. `docs/initial-brief.md` を粗く埋める
-3. AI エージェントに、このリポジトリを読ませたうえで `README.md`、`docs/project-spec.md`、`AGENTS.md`、`docs/coding-rules.md` を具体化させる
+3. AIエージェントに、このリポジトリを読ませたうえで `README.md`、`docs/project-spec.md`、`AGENTS.md`、`docs/coding-rules.md` を具体化させる
 4. 文書が固まってから、必要な実装や技術スタックの初期化に進む
 
 ## Repository Layout
@@ -39,13 +39,13 @@
 - まずプロジェクト種別を明確にする
 - 技術スタック未確定の段階では、文書整備を優先する
 - 実装開始時の既定案は、要件に最も近い最小構成を選ぶ
-- Web アプリとして始める場合の例のひとつは `Bun + Vite + TypeScript`
+- Webアプリとして始める場合の例のひとつは `Bun + Vite + TypeScript`
 
 ## AI Agent Workflow
 - 実装や文書更新を始める前に、`docs/initial-brief.md` の不足事項と前提を整理する。
 - 変更が複数ファイルにまたがる、または要件が曖昧な場合は、先に探索と短い計画を行ってから実装する。
 - 受け入れ条件や完了条件を書くときは、何をもって完了とみなすかだけでなく、どう確認するかも合わせて明記する。
-- AI エージェント向けの常設ルールは短く保ち、詳細は `AGENTS.md`、`docs/project-spec.md`、`docs/coding-rules.md` に集約する。
+- AIエージェント向けの常設ルールは短く保ち、詳細は `AGENTS.md`、`docs/project-spec.md`、`docs/coding-rules.md` に集約する。
 - Claude Code を使う場合は `CLAUDE.md` を入口として扱い、この `README.md` と関連文書を参照させる。
 
 ## Optional Agent Extensions

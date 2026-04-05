@@ -22,7 +22,7 @@
 ## 3. 技術方針
 - 想定カテゴリ: `<Web app / CLI / Library / Batch / Internal tool / etc.>`
 - 実装スタックは、要件に対して最小構成になるものを選ぶ
-- Web アプリとして始める場合の例のひとつは `Bun + Vite + TypeScript + Vitest`
+- Webアプリとして始める場合の例のひとつは `Bun + Vite + TypeScript + Vitest`
 - 既定案や慣習から外す場合は、要件との対応理由を明記する
 - 採用スタックが未確定なら、先に機能要件と非機能要件を固める
 
