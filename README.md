@@ -20,7 +20,7 @@
 ## Getting Started
 1. このリポジトリを新規プロジェクト用にコピーする
 2. `docs/initial-brief.md` を粗く埋める
-3. AIエージェントに、このリポジトリを読ませたうえで `README.md`、`docs/project-spec.md`、`AGENTS.md`、`docs/coding-rules.md` を具体化させる
+3. AIエージェントに、このリポジトリを読ませたうえで `README.md`、`docs/project-spec.md`、`AGENTS.md`、`docs/rules-coding.md` を具体化させる
 4. 文書が固まってから、必要な実装や技術スタックの初期化に進む
 
 ## Repository Layout
@@ -28,7 +28,7 @@
 - `ARCHITECTURE.md` : 実装が進んだ後の構造理解を補助する文書（任意）
 - `docs/initial-brief.md` : 初回要件整理のための簡易ブリーフ
 - `docs/project-spec.md` : 仕様と受け入れ条件のひな形
-- `docs/coding-rules.md` : 人間向けの実装判断ルール
+- `docs/rules-coding.md` : 人間向けの実装判断ルール
 - `docs/adr/` : 重要な設計判断を記録するテンプレート（任意）
 - `AGENTS.md` : AI エージェント向けの補助文書
 - `CONTRIBUTING.md` : 変更提案時の補助文書（任意）
@@ -45,7 +45,7 @@
 - 実装や文書更新を始める前に、`docs/initial-brief.md` の不足事項と前提を整理する。
 - 変更が複数ファイルにまたがる、または要件が曖昧な場合は、先に探索と短い計画を行ってから実装する。
 - 受け入れ条件や完了条件を書くときは、何をもって完了とみなすかだけでなく、どう確認するかも合わせて明記する。
-- AIエージェント向けの常設ルールは短く保ち、詳細は `AGENTS.md`、`docs/project-spec.md`、`docs/coding-rules.md` に集約する。
+- AIエージェント向けの常設ルールは短く保ち、詳細は `AGENTS.md`、`docs/project-spec.md`、`docs/rules-coding.md` に集約する。
 - Claude Code を使う場合は `CLAUDE.md` を入口として扱い、この `README.md` と関連文書を参照させる。
 
 ## Optional Agent Extensions
@@ -54,7 +54,7 @@
 - 外部通信、権限追加、バックグラウンド実行、継続タスク化を伴う場合は、特に必要性と運用責任を明記する。
 
 ## Maintenance Notes
-- 仕様と実装がぶつかったら、先に `docs/project-spec.md` と `docs/coding-rules.md` のどちらを更新すべきか整理する
+- 仕様と実装がぶつかったら、先に `docs/project-spec.md` と `docs/rules-coding.md` のどちらを更新すべきか整理する
 - 技術固有メモは必要になってから追加し、最初から文書を増やしすぎない
 - 実装コマンドは、採用スタックが決まってから `README.md` と `AGENTS.md` に確定させる
 - 公開用の成果物が必要な場合は、ローカル生成物ではなく CI で作成・配布する
