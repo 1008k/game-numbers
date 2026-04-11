@@ -27,37 +27,31 @@
 - `README.md` : このテンプレートの使い方
 - `ARCHITECTURE.md` : 実装が進んだ後の構造理解を補助する文書（任意）
 - `docs/initial-brief.md` : 初回要件整理のための簡易ブリーフ
+- `docs/integrations/` : 任意拡張の導入判断を整理する補助文書
 - `docs/project-spec.md` : 仕様と受け入れ条件のひな形
 - `docs/rules-coding.md` : 人間向けの実装判断ルール
 - `docs/adr/` : 重要な設計判断を記録するテンプレート（任意）
-- `AGENTS.md` : AI エージェント向けの補助文書
+- `AGENTS.md` : AIエージェント向けの正本となる補助文書
+- `CLAUDE.md`, `GEMINI.md` : `AGENTS.md` を参照させるための互換入口
 - `CONTRIBUTING.md` : 変更提案時の補助文書（任意）
 - `CHANGELOG.md` : 重要な変更履歴（任意）
 
-## Default Approach
-- 想定対象はソフトウェア開発プロジェクト全般
-- まずプロジェクト種別を明確にする
-- 技術スタック未確定の段階では、文書整備を優先する
-- 実装開始時の既定案は、要件に最も近い最小構成を選ぶ
-- Webアプリとして始める場合の例のひとつは `Bun + Vite + TypeScript`
+## AI Agent Workflow & Extensions
+- AIエージェントの振る舞い、拡張運用、および技術スタックの既定案に関するルールは、すべて `AGENTS.md` を正本とします。
+- `CLAUDE.md`, `GEMINI.md` などの各AI向けファイルは、`AGENTS.md` を参照する連携窓口として扱います。
 
-## AI Agent Workflow
-- 実装や文書更新を始める前に、`docs/initial-brief.md` の不足事項と前提を整理する。
-- 変更が複数ファイルにまたがる、または要件が曖昧な場合は、先に探索と短い計画を行ってから実装する。
-- 受け入れ条件や完了条件を書くときは、何をもって完了とみなすかだけでなく、どう確認するかも合わせて明記する。
-- AIエージェント向けの常設ルールは短く保ち、詳細は `AGENTS.md`、`docs/project-spec.md`、`docs/rules-coding.md` に集約する。
-- Claude Code を使う場合は `CLAUDE.md` を入口として扱い、この `README.md` と関連文書を参照させる。
-
-## Optional Agent Extensions
-- MCP、フック、サブエージェント、非対話モード、自動化などの拡張機能は、対応しているエージェントで必要性がある場合に活用を検討する。
-- これらの拡張は既定要件ではなく任意運用とし、採用する場合は目的、影響範囲、失敗時の扱いを文書化する。
-- 外部通信、権限追加、バックグラウンド実行、継続タスク化を伴う場合は、特に必要性と運用責任を明記する。
+## Recommended Optional Integrations
+- 汎用テンプレートの段階では、実装依存の強い拡張を最初から組み込まず、必要性が高いものだけを後から有効化する。
+- まず検討する候補は、`context access` を広げる拡張と、軽量なローカルメモリ拡張である。
+- 推奨する任意拡張の入口は、`docs/integrations/` を参照する。
+- `MCP baseline`: `filesystem`、`git`、`github` など、幅広い案件で再利用しやすい基本セット
+- `GitMCP`: 外部のGitHubリポジトリやドキュメントをAIに読ませるための補助
+- `OpenMemory Lite`: ローカル保存を前提にした軽量メモリ拡張
+- `MemPalace` のような高機能メモリ基盤は有力な候補だが、依存、運用、成熟度の観点から既定組み込みにはしない
 
 ## Maintenance Notes
-- 仕様と実装がぶつかったら、先に `docs/project-spec.md` と `docs/rules-coding.md` のどちらを更新すべきか整理する
 - 技術固有メモは必要になってから追加し、最初から文書を増やしすぎない
 - 実装コマンドは、採用スタックが決まってから `README.md` と `AGENTS.md` に確定させる
-- 公開用の成果物が必要な場合は、ローカル生成物ではなく CI で作成・配布する
 - `ARCHITECTURE.md` は、仕様ではなく現在のコード構造を説明する文書として使う
 - 重要な設計判断の理由は、必要に応じて `docs/adr/` に分離して残す
 

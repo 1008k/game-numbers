@@ -6,3 +6,8 @@ coverage/
 *.pem
 *.key
 *.log
+
+# OS & Editor
+.DS_Store
+.vscode/
+.idea/

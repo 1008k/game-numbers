@@ -14,13 +14,8 @@
 - 文書間の矛盾がないことを確認する
 - 不要な生成物や機密情報が含まれていないことを確認する
 - Git 管理対象が、プロジェクトの再現性や共有運用に必要なものに収まっていることを確認する
-- 公開用の成果物が必要な場合は、ローカル生成物ではなく CI で作成・配布する
 - 必要なら `CHANGELOG.md` を更新する
 - `CHANGELOG.md` は利用者向けの変更を短く記録し、内部向けの詳細は commit や PR に寄せる
 
 ## Related Files
-- 使い方: `README.md`
-- 初回要件整理: `docs/initial-brief.md`
-- 仕様のひな形: `docs/project-spec.md`
-- 実装ルール: `docs/rules-coding.md`
-- エージェント向け入口: `AGENTS.md`
+- 全体構成や関連ファイルの一覧は `README.md` を参照してください。
