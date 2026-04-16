@@ -15,7 +15,7 @@
 - 不要な生成物や機密情報が含まれていないことを確認する
 - Git 管理対象が、プロジェクトの再現性や共有運用に必要なものに収まっていることを確認する
 - 必要なら `CHANGELOG.md` を更新する
-- `CHANGELOG.md` は利用者向けの変更を短く記録し、内部向けの詳細は commit や PR に寄せる
+- `CHANGELOG.md` の書き方は `docs/rules-writing.md` に従う
 
 ## Related Files
 - 全体構成や関連ファイルの一覧は `README.md` を参照してください。

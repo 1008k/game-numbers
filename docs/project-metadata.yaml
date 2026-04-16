@@ -1,0 +1,17 @@
+version: 1
+
+project:
+  name: "<Project Name>"
+  summary: "<プロジェクトの概要>"
+  goal: "<達成したい目的>"
+  target_users_and_scope: "<対象ユーザーや利用範囲>"
+  category: "<Web app / CLI / Library / Batch / Internal tool / etc.>"
+
+status:
+  brief_source: docs/initial-brief.md
+  metadata_state: draft
+
+conventions:
+  language_for_keys: english
+  keep_values_short: true
+  rationale_belongs_in: docs/project-spec.md
