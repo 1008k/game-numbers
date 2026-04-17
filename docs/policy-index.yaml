@@ -138,18 +138,6 @@ policy:
     architecture_documentation: not_started
     release_process: not_started
 
-  status_stages:
-    - not_started
-    - in_progress
-    - defined
-    - verified
-
-  decision_stages:
-    - undecided
-    - proposed
-    - decided
-    - implemented
-
   integration_catalog:
     - name: mcp-baseline
       purpose: reusable-baseline-context-and-repository-access

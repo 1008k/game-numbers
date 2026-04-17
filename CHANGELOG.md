@@ -1,7 +1,8 @@
 # Changelog
 
 ## [Unreleased]
-### Changed
+
+## [1.0.0] - 2026-04
 - テンプレートの位置づけを docs-first な開発プロジェクト向けに整理
 - `README.template.md` と `SETUP_PROMPT.md` を削除し、導線を `README.md` と `docs/initial-brief.md` に集約
 - `Web` 固定の説明を外し、複数のプロジェクト種別に対応できる文面へ調整

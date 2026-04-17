@@ -1,7 +1,8 @@
 # ADR 0000: <Title>
 
 ## Status
-Proposed / Accepted / Superseded
+`proposed` / `decided` / `implemented` のいずれかを記載する。
+取り得る値は `docs/policy-index.yaml` の `policy.allowed_values.decision_stages` を参照する。
 
 ## Context
 - 背景: `<背景>`
