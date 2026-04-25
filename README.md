@@ -16,7 +16,7 @@
 - エージェントが先に読むための `docs/policy-index.yaml`
 - 可変なプロジェクト基本情報を置く `docs/project-metadata.yaml`
 - 実装前に前提・対象範囲・非目的を固めるための導線
-- 実装が進んだ後に構造理解を補助する `ARCHITECTURE.md` のひな形
+- テンプレート構成を説明し、コピー後は実装構造に合わせて更新する `ARCHITECTURE.md`
 - 重要な設計判断を残すための ADR テンプレート
 
 ## Getting Started
@@ -29,7 +29,8 @@
 
 ## Repository Layout
 - `README.md` : このテンプレートの使い方
-- `ARCHITECTURE.md` : コード構造の補助文書（任意）
+- `ARCHITECTURE.md` : テンプレート構成の説明と、コピー後プロジェクトのコード構造補助文書（任意）
+- `.agents/skills/` : repo固有の再利用workflowを置くskillディレクトリ（任意）
 - `docs/initial-brief.md` : 初回要件整理の簡易ブリーフ
 - `docs/project-metadata.yaml` : 可変な基本情報
 - `docs/integrations/` : 拡張導入判断の補助文書
@@ -46,16 +47,22 @@
 - エージェントは最初に `docs/policy-index.yaml` を読み、参照先、優先順位、状態、既定判断を解決する。
 - `AGENTS.md` は短い入口とし、`CLAUDE.md`, `GEMINI.md` などの各AI向けファイルは `AGENTS.md` を参照する連携窓口として扱う。
 - 詳細な運用ルールは `README.md` に重ねず、`docs/policy-index.yaml` と関連文書に置く。
+- repo固有の繰り返しworkflowは `.agents/skills/` に置き、常時効かせたい短いルールは `AGENTS.md` に残す。
 
 ## Recommended Optional Integrations
 - 汎用テンプレートの段階では、実装依存の強い拡張を最初から組み込まず、必要性が高いものだけを後から有効化する。
 - 候補一覧と既定ステータスは `docs/policy-index.yaml` の `policy.integration_catalog` を参照する。
 - 補足説明や判断材料は `docs/integrations/` を参照する。
+- repo内skillを追加すべき条件は `docs/integrations/skills.md` を参照する。
 
 ## Maintenance Notes
 - 技術固有メモや実装コマンドは、採用スタック決定後に必要な分だけ追加する
-- `ARCHITECTURE.md` は現在のコード構造、`docs/adr/` は設計判断の理由を扱う
+- `ARCHITECTURE.md` はこのテンプレートの構成を説明し、コピー後は現在のコード構造に合わせて更新する
 - `docs/policy-index.yaml` は参照ハブ、`docs/project-metadata.yaml` は短い事実、理由や制約は Markdown に分ける
+
+## License / Publication Policy
+このテンプレートのライセンスは現時点では未定義です。
+公開、再配布、社外利用を行う前に、`LICENSE` の追加または利用範囲の明記を行ってください。
 
 ## Contributing
 改善方針は [CONTRIBUTING.md](./CONTRIBUTING.md) を参照してください。

@@ -1,15 +1,20 @@
 version: 1
 
 project:
-  name: "<Project Name>"
-  summary: "<プロジェクトの概要>"
-  goal: "<達成したい目的>"
-  target_users_and_scope: "<対象ユーザーや利用範囲>"
-  category: "<Web app / CLI / Library / Batch / Internal tool / etc.>"
+  name: "Project Starter Template"
+  summary: "AIエージェントとdocs-firstで新規プロジェクトを立ち上げるためのテンプレート"
+  goal: "要件、仕様、運用ルールを先に整理し、実装へ進む土台を提供する"
+  target_users_and_scope: "AIエージェント中心で新規開発プロジェクトを始める開発者"
+  category: "docs-first template"
+
+template:
+  is_template: true
+  intended_use: copy-for-new-project
+  replace_project_fields_after_copy: true
 
 status:
   brief_source: docs/initial-brief.md
-  metadata_state: draft
+  metadata_state: reviewed
 
 conventions:
   language_for_keys: english

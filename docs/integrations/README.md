@@ -30,3 +30,4 @@
 - `mcp-baseline.md`: 汎用案件で最初に検討しやすい基本MCP
 - `gitmcp.md`: 外部GitHubリポジトリや文書参照の補助
 - `openmemory-lite.md`: 軽量なローカルメモリ拡張
+- `skills.md`: repo内にskillを追加すべき条件と `AGENTS.md` / MCP との切り分け

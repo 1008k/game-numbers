@@ -9,7 +9,7 @@
 - 4. `docs/rules-coding.md`
 - 5. `docs/rules-writing.md`
 - 6. `README.md`
-- 7. `ARCHITECTURE.md`（実装済みの場合）
+- 7. `ARCHITECTURE.md`（テンプレート構成確認時、または実装済みの場合）
 
 ## 要点
 - このリポジトリは `docs-first` テンプレートです。
