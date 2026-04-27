@@ -21,7 +21,7 @@
   ├── README.md                # 人とエージェント向け概要
   └── ARCHITECTURE.md          # この構造説明
   ```
-- 主要ファイル: `docs/policy-index.yaml` が参照ハブ、`docs/project-metadata.yaml` がテンプレート基本情報、`docs/project-spec.md` が仕様文書の雛形を扱う。
+- 主要ファイル: `docs/policy-index.yaml` が参照ハブ、`docs/project-metadata.yaml` がテンプレート基本情報、`docs/project-spec.md` が要件定義と仕様の雛形を扱う。
 - レイヤーやモジュールの分け方: 実装レイヤーはまだ持たず、文書の正本、説明文書、任意テンプレート、補助workflowを分ける。
 
 ## 3. 中心となる責務
@@ -34,7 +34,7 @@
   - 主な依存先: `docs/project-spec.md`
   - 変更時の注意: 長い理由や制約は仕様文書へ寄せる
 - `docs/project-spec.md`:
-  - 役割: 何を作るか、非目的、受け入れ条件を具体化する
+  - 役割: なぜ作るか、何を作るか、対象範囲、振る舞い、データ構造、非目的、受け入れ条件を具体化する
   - 主な依存先: `docs/project-metadata.yaml`, `docs/initial-brief.md`
   - 変更時の注意: 実装ルールやセットアップ手順を重複させない
 - `.agents/skills/`:
