@@ -22,6 +22,7 @@
   └── ARCHITECTURE.md          # この構造説明
   ```
 - 主要ファイル: `docs/policy-index.yaml` が参照ハブ、`docs/project-metadata.yaml` がテンプレート基本情報、`docs/project-spec.md` が要件定義と仕様の雛形を扱う。
+- 補助ルール: `docs/rules-coding.md` が実装判断、`docs/rules-ux.md` がユーザー向けUI判断、`docs/rules-writing.md` が文書表記を扱う。
 - レイヤーやモジュールの分け方: 実装レイヤーはまだ持たず、文書の正本、説明文書、任意テンプレート、補助workflowを分ける。
 
 ## 3. 中心となる責務
@@ -37,6 +38,10 @@
   - 役割: なぜ作るか、何を作るか、対象範囲、振る舞い、データ構造、非目的、受け入れ条件を具体化する
   - 主な依存先: `docs/project-metadata.yaml`, `docs/initial-brief.md`
   - 変更時の注意: 実装ルールやセットアップ手順を重複させない
+- `docs/rules-ux.md`:
+  - 役割: ユーザー向けUIの設計、実装、レビュー時の判断基準を保持する
+  - 主な依存先: `docs/policy-index.yaml`, `docs/project-spec.md`
+  - 変更時の注意: 画面ごとの具体仕様は `docs/project-spec.md` に置き、この文書には共通判断だけを残す
 - `.agents/skills/`:
   - 役割: 繰り返し使うrepo固有workflowを保持する
   - 主な依存先: `docs/policy-index.yaml`, `docs/project-spec.md`, `README.md`

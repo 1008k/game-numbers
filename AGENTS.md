@@ -7,9 +7,10 @@
 - 2. `docs/project-metadata.yaml`
 - 3. `docs/project-spec.md`
 - 4. `docs/rules-coding.md`
-- 5. `docs/rules-writing.md`
-- 6. `README.md`
-- 7. `ARCHITECTURE.md`（テンプレート構成確認時、または実装済みの場合）
+- 5. `docs/rules-ux.md`（ユーザー向けUIの設計、実装、レビュー時）
+- 6. `docs/rules-writing.md`
+- 7. `README.md`
+- 8. `ARCHITECTURE.md`（テンプレート構成確認時、または実装済みの場合）
 
 ## 要点
 - このリポジトリは `docs-first` テンプレートです。
@@ -17,6 +18,7 @@
 - 可変な基本情報は `docs/project-metadata.yaml` に置きます。
 - 実装スタック未確定なら、まず文書を整えます。
 - Webアプリの既定具体例は `policy.defaults.example_stacks.web_app` を参照します。
+- ユーザー向けUIを扱う場合は `policy.ui_ux` と `docs/rules-ux.md` を参照します。
 - 実行コマンドは、実装雛形ができてから `README.md` に確定します。
 
 ## 補足

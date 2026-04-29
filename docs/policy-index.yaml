@@ -3,6 +3,7 @@ version: 2
 sources:
   agents: AGENTS.md
   coding: docs/rules-coding.md
+  ux: docs/rules-ux.md
   writing: docs/rules-writing.md
   spec: docs/project-spec.md
   architecture: ARCHITECTURE.md
@@ -67,6 +68,7 @@ policy:
     target_scope_source: README.md
     ai_agent_workflow_source: AGENTS.md
     implementation_rules_source: docs/rules-coding.md
+    ux_rules_source: docs/rules-ux.md
     writing_rules_source: docs/rules-writing.md
     specification_source: docs/project-spec.md
     project_metadata_source: docs/project-metadata.yaml
@@ -76,6 +78,7 @@ policy:
       - docs/project-metadata.yaml
       - docs/project-spec.md
       - docs/rules-coding.md
+      - docs/rules-ux.md
       - docs/rules-writing.md
       - README.md
       - ARCHITECTURE.md
@@ -122,6 +125,7 @@ policy:
     - docs/project-metadata.yaml
     - docs/project-spec.md
     - docs/rules-coding.md
+    - docs/rules-ux.md
     - docs/rules-writing.md
 
   optional_templates:
@@ -251,8 +255,38 @@ policy:
     commands_defined_in_readme_when_implementation_starts: true
     lint_test_build_execution_defined_if_adopted: true
     test_policy_defined_when_important_logic_exists: true
+    ux_flow_and_states_defined_for_user_facing_ui: true
     non_goals_documented: true
     dependency_and_external_communication_need_explained: true
+
+  ui_ux:
+    applies_when:
+      - building-user-facing-ui
+      - changing-screen-flow
+      - adding-form-or-primary-action
+      - reviewing-ui-or-ux
+    source: docs/rules-ux.md
+    required_before_implementation:
+      - define_user_goal
+      - design_shortest_user_flow
+      - define_loading_empty_error_states
+    require_written_design_when:
+      - adding-new-screen
+      - changing-primary-user-flow
+      - adding-form-or-destructive-action
+    default_principles:
+      one_primary_goal_per_screen: true
+      one_primary_action_per_scope: true
+      minimize_inputs: true
+      predictable_interactions: true
+      immediate_feedback: true
+      avoid_unnecessary_modals: true
+    self_review:
+      - first_time_user_clarity
+      - minimum_steps
+      - minimum_inputs
+      - clear_primary_action
+      - error_recovery_considered
 
   release_checks:
     no_secrets_in_repository: true
