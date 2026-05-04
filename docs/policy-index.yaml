@@ -248,7 +248,7 @@ policy:
     commits_follow_user_instruction_by_default: true
     before_commit_share_intent_and_granularity_if_needed: true
     prefer_generic_tools_and_basic_operations_first: true
-    split_only_boundary-sensitive_operations_into_confirmed_or_specialized_flows: true
+    split_only_boundary_sensitive_operations_into_confirmed_or_specialized_flows: true
     avoid_loading_long_context_up_front: true
     read_additional_documents_only_as_needed: true
     added_operational_rules_are_not_permanent_by_default: true
