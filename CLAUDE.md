@@ -1,3 +1,7 @@
-このプロジェクトのAIエージェント向け指示は `AGENTS.md` を正本とします。
+# Claude Code entrypoint
 
-@AGENTS.md
+このリポジトリの共通運用ルールは @./AGENTS.md を参照してください。
+
+## Claude Code向けメモ
+- プロジェクト指示はこの `CLAUDE.md` から読み始めます。
+- 追加の動作設定が必要なら `.claude/settings.json` を使います。

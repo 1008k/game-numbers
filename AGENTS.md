@@ -2,6 +2,20 @@
 
 このファイルはエージェント向けの短い入口です。最初に `docs/policy-index.yaml` を読み、そこから参照先と優先順位を解決してください。判断理由、例外、具体例だけを必要に応じて各 Markdown 文書で確認します。
 
+<!-- CODEX向けの設定 https://developers.openai.com/codex/memories  -->
+ [features]
+memories = true
+
+<!--
+エージェント別の補足メモ:
+- `Codex` は上記の `[features]` を解釈します。
+- `Claude Code` は `AGENTS.md` 内の同等フラグを持たず、`CLAUDE.md` と `.claude/settings.json` を使います。
+- `Gemini CLI` も `AGENTS.md` 内の同等フラグを持たず、`GEMINI.md` と `.gemini/settings.json` を使います。
+- `Cursor` は root の `AGENTS.md` をシンプルな agent instructions として読めます。より強いネイティブ運用は `.cursor/rules` です。
+- `Windsurf` は `AGENTS.md` を標準で自動検出し、配置ディレクトリに応じてスコープ適用します。
+- このリポジトリでは `CLAUDE.md` と `GEMINI.md` から `AGENTS.md` を参照する構成にします。
+-->
+
 ## 読み順
 - 1. `docs/policy-index.yaml`
 - 2. `docs/project-metadata.yaml`
