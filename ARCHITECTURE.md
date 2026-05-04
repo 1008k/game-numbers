@@ -13,13 +13,26 @@
 - 主要ディレクトリ:
   ```text
   .
-  ├── .agents/skills/          # repo固有の再利用workflow
-  ├── docs/                    # 仕様、ルール、初期ブリーフ、拡張判断
-  │   ├── adr/                 # 設計判断記録のテンプレート
-  │   └── integrations/        # 任意拡張の判断材料
-  ├── AGENTS.md                # AIエージェント向け入口
-  ├── README.md                # 人とエージェント向け概要
-  └── ARCHITECTURE.md          # この構造説明
+  ├── .agents/skills/              # repo固有の再利用workflow
+  ├── docs/
+  │   ├── adr/                     # 設計判断記録のテンプレート
+  │   ├── integrations/            # 任意拡張の判断材料
+  │   ├── initial-brief.md         # 初回要件整理の簡易ブリーフ
+  │   ├── policy-index.yaml        # 参照ハブと静的項目（正本）
+  │   ├── project-metadata.yaml    # 可変な基本情報
+  │   ├── project-spec.md          # 要件定義と仕様の正本
+  │   ├── rules-coding.md          # 実装判断の説明
+  │   ├── rules-ux.md              # UI/UX判断基準
+  │   └── rules-writing.md         # 文書表記ルール
+  ├── AGENTS.md                    # AIエージェント向け入口
+  ├── CLAUDE.md                    # AGENTS.md互換入口（Claude向け）
+  ├── GEMINI.md                    # AGENTS.md互換入口（Gemini向け）
+  ├── .cursorrules                 # AGENTS.md互換入口（Cursor向け）
+  ├── .windsurfrules               # AGENTS.md互換入口（Windsurf向け）
+  ├── ARCHITECTURE.md              # この構造説明
+  ├── CONTRIBUTING.md              # 変更提案の補助文書
+  ├── CHANGELOG.md                 # 重要な変更履歴
+  └── README.md                    # 人とエージェント向け概要
   ```
 - 主要ファイル: `docs/policy-index.yaml` が参照ハブ、`docs/project-metadata.yaml` がテンプレート基本情報、`docs/project-spec.md` が要件定義と仕様の雛形を扱う。
 - 補助ルール: `docs/rules-coding.md` が実装判断、`docs/rules-ux.md` がユーザー向けUI判断、`docs/rules-writing.md` が文書表記を扱う。
