@@ -37,10 +37,12 @@
 - `docs/project-spec.md` : 要件定義、仕様、スコープ外、受け入れ条件の正本
 - `docs/rules-coding.md` : 実装判断の説明
 - `docs/rules-ux.md` : ユーザー向けUIの設計、実装、レビュー時の判断基準
+- `docs/rules-writing.md` : 文書表記ルール
 - `docs/policy-index.yaml` : 参照ハブと静的項目
 - `docs/adr/` : 設計判断の記録テンプレート（任意）
 - `AGENTS.md` : AIエージェント向け入口
 - `CLAUDE.md`, `GEMINI.md` : `AGENTS.md` の互換入口
+- `.cursorrules`, `.windsurfrules` : `AGENTS.md` の互換入口（Cursor, Windsurf向け）
 - `CONTRIBUTING.md` : 変更提案の補助文書（任意）
 - `CHANGELOG.md` : 重要な変更履歴（任意）
 

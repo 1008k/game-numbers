@@ -1,16 +1,19 @@
 version: 2
 
 sources:
+  readme: README.md
   agents: AGENTS.md
   coding: docs/rules-coding.md
   ux: docs/rules-ux.md
   writing: docs/rules-writing.md
   spec: docs/project-spec.md
+  initial_brief: docs/initial-brief.md
   architecture: ARCHITECTURE.md
   contributing: CONTRIBUTING.md
   changelog: CHANGELOG.md
   project_metadata: docs/project-metadata.yaml
   adr_directory: docs/adr/
+  integrations_directory: docs/integrations/
 
 policy:
   schema_conventions:
@@ -96,11 +99,12 @@ policy:
     default_read_path:
       - docs/policy-index.yaml
       - docs/project-metadata.yaml
-      - AGENTS.md
       - docs/project-spec.md
       - docs/rules-coding.md
+      - docs/rules-ux.md
       - docs/rules-writing.md
       - README.md
+      - ARCHITECTURE.md
     markdown_role: rationale-examples-exceptions
     yaml_role: routing-state-checks-decisions
 
@@ -185,7 +189,7 @@ policy:
       reconcile_references: true
     when_project_direction_scope_and_technical_policy_are_clear:
       review_candidate_extensions_and_support_assets: true
-    when_unsure_or_pre-spec:
+    when_unsure_or_pre_spec:
       start_from: docs/initial-brief.md
       identify_missing_requirements: true
 
@@ -201,9 +205,9 @@ policy:
   token_efficiency:
     prioritize_quality_over_saving_tokens: true
     prefer_verification_over_shortcuts_when_evidence_is_weak: true
-    start_from_primary_or_high-relevance_sources: true
+    start_from_primary_or_high_relevance_sources: true
     expand_search_scope_only_when_needed: true
-    avoid_broad_full-file_reads_without_reason: true
+    avoid_broad_full_file_reads_without_reason: true
     avoid_exhaustive_listing_without_reason: true
     avoid_rereading_unchanged_files_without_reason: true
     for_small_wording_changes:
@@ -215,7 +219,7 @@ policy:
       avoid_long_quotes: true
     planning:
       keep_alternatives_minimal: true
-      avoid_over-questioning_for_small_independent_changes: true
+      avoid_over_questioning_for_small_independent_changes: true
 
   extension_policy:
     allowed_when_justified:
