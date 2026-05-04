@@ -6,6 +6,12 @@ Use it to keep UI generation, mockups, prototypes, and implementation visually c
 UX principles and review criteria live in `docs/rules-ux.md`.
 Product requirements and expected behavior live in `docs/project-spec.md`.
 
+## How To Use This File
+- Leave this file partially blank while the product direction is still unclear.
+- After 1-2 representative screens or mockups establish a direction, update this file before expanding to more screens.
+- Before generating UI, editing mockups, or implementing user-facing screens, check this file for visual direction and component rules.
+- When the design direction changes intentionally, update this file in the same change.
+
 ## 1. Product Context
 - Product:
 - Audience:
@@ -21,14 +27,21 @@ Product requirements and expected behavior live in `docs/project-spec.md`.
 - Reference products:
 - Avoid:
 
-## 3. Experience Principles
+## 3. Do Not
+- Do not use:
+- Avoid visual patterns:
+- Avoid interaction patterns:
+- Never change without updating this file:
+- Out of scope for design agents:
+
+## 4. Experience Principles
 - Primary screen goal:
 - Information priority:
 - Navigation principle:
 - Feedback principle:
 - Error recovery principle:
 
-## 4. Visual System
+## 5. Visual System
 
 ### Color
 - Primary:
@@ -66,7 +79,7 @@ Product requirements and expected behavior live in `docs/project-spec.md`.
 - Modal/dialog:
 - Avoid:
 
-## 5. Component Rules
+## 6. Component Rules
 
 ### Buttons
 - Primary:
@@ -97,7 +110,7 @@ Product requirements and expected behavior live in `docs/project-spec.md`.
 - Local navigation:
 - Breadcrumbs/tabs:
 
-## 6. Screen Patterns
+## 7. Screen Patterns
 
 ### Screen:
 - User goal:
@@ -109,20 +122,20 @@ Product requirements and expected behavior live in `docs/project-spec.md`.
 - Error state:
 - Success state:
 
-## 7. Responsive Rules
+## 8. Responsive Rules
 - Mobile:
 - Tablet:
 - Desktop:
 - Wide desktop:
 
-## 8. Content Style
+## 9. Content Style
 - Voice:
 - Button labels:
 - Empty state copy:
 - Error copy:
 - Help text:
 
-## 9. Stitch Prompt Block
+## 10. Stitch Prompt Block
 
 Use this block when importing or prompting in Stitch.
 
@@ -137,10 +150,11 @@ Avoid:
 Important states:
 ```
 
-## 10. Review Checklist
+## 11. Review Checklist
 - The screen has one clear primary goal.
 - The primary action is visually dominant.
 - The visual tone matches the design direction.
+- The design avoids everything listed in Do Not.
 - Loading, empty, error, and success states are covered.
 - Components follow the rules above.
 - The design can be extended to another screen without re-explaining the style.

@@ -66,6 +66,10 @@ policy:
       - draft
       - reviewed
       - locked
+    design_maturity:
+      - draft
+      - direction-set
+      - stable
 
   authority:
     primary_hub: docs/policy-index.yaml
