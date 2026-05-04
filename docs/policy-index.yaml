@@ -3,6 +3,7 @@ version: 2
 sources:
   readme: README.md
   agents: AGENTS.md
+  design: DESIGN.md
   coding: docs/rules-coding.md
   ux: docs/rules-ux.md
   writing: docs/rules-writing.md
@@ -73,6 +74,7 @@ policy:
     implementation_rules_source: docs/rules-coding.md
     ux_rules_source: docs/rules-ux.md
     writing_rules_source: docs/rules-writing.md
+    design_direction_source: DESIGN.md
     specification_source: docs/project-spec.md
     project_metadata_source: docs/project-metadata.yaml
     architecture_source: ARCHITECTURE.md
@@ -82,6 +84,7 @@ policy:
       - docs/project-spec.md
       - docs/rules-coding.md
       - docs/rules-ux.md
+      - DESIGN.md
       - docs/rules-writing.md
       - README.md
       - ARCHITECTURE.md
@@ -102,6 +105,7 @@ policy:
       - docs/project-spec.md
       - docs/rules-coding.md
       - docs/rules-ux.md
+      - DESIGN.md
       - docs/rules-writing.md
       - README.md
       - ARCHITECTURE.md
@@ -116,6 +120,8 @@ policy:
 
   checks:
     file_case: kebab-case
+    file_case_exceptions:
+      - DESIGN.md
     generated_files_editable: false
     secrets_in_repository: false
     secrets_in_code: false
@@ -133,6 +139,7 @@ policy:
     - docs/rules-writing.md
 
   optional_templates:
+    - DESIGN.md
     - ARCHITECTURE.md
     - CONTRIBUTING.md
     - CHANGELOG.md
@@ -270,10 +277,12 @@ policy:
       - adding-form-or-primary-action
       - reviewing-ui-or-ux
     source: docs/rules-ux.md
+    design_direction_source: DESIGN.md
     required_before_implementation:
       - define_user_goal
       - design_shortest_user_flow
       - define_loading_empty_error_states
+      - check_portable_design_direction_when_available
     require_written_design_when:
       - adding-new-screen
       - changing-primary-user-flow

@@ -25,6 +25,7 @@
   │   ├── rules-ux.md              # UI/UX判断基準
   │   └── rules-writing.md         # 文書表記ルール
   ├── AGENTS.md                    # AIエージェント向け入口
+  ├── DESIGN.md                    # 持ち運び可能なデザイン方向
   ├── CLAUDE.md                    # AGENTS.md互換入口（Claude向け）
   ├── GEMINI.md                    # AGENTS.md互換入口（Gemini向け）
   ├── .cursorrules                 # AGENTS.md互換入口（Cursor向け）
@@ -36,6 +37,7 @@
   ```
 - 主要ファイル: `docs/policy-index.yaml` が参照ハブ、`docs/project-metadata.yaml` がテンプレート基本情報、`docs/project-spec.md` が要件定義と仕様の雛形を扱う。
 - 補助ルール: `docs/rules-coding.md` が実装判断、`docs/rules-ux.md` がユーザー向けUI判断、`docs/rules-writing.md` が文書表記を扱う。
+- デザイン方向: `DESIGN.md` がユーザー向けUIを持つプロジェクトで、AIデザインツールやコーディングエージェント間に持ち運ぶ視覚方向、コンポーネント規則、画面パターンを扱う。
 - レイヤーやモジュールの分け方: 実装レイヤーはまだ持たず、文書の正本、説明文書、任意テンプレート、補助workflowを分ける。
 
 ## 3. 中心となる責務
@@ -53,8 +55,12 @@
   - 変更時の注意: 実装ルールやセットアップ手順を重複させない
 - `docs/rules-ux.md`:
   - 役割: ユーザー向けUIの設計、実装、レビュー時の判断基準を保持する
-  - 主な依存先: `docs/policy-index.yaml`, `docs/project-spec.md`
-  - 変更時の注意: 画面ごとの具体仕様は `docs/project-spec.md` に置き、この文書には共通判断だけを残す
+  - 主な依存先: `docs/policy-index.yaml`, `docs/project-spec.md`, `DESIGN.md`
+  - 変更時の注意: 画面ごとの具体仕様は `docs/project-spec.md`、プロジェクト固有の視覚方向は `DESIGN.md` に置き、この文書には共通判断だけを残す
+- `DESIGN.md`:
+  - 役割: プロジェクト固有のデザイン方向、コンポーネント規則、画面パターンを保持する
+  - 主な依存先: `docs/rules-ux.md`, `docs/project-spec.md`
+  - 変更時の注意: UX一般原則や機能要件を重複させず、Stitchなど外部デザインツールに戻しやすい短いルールとして保つ
 - `.agents/skills/`:
   - 役割: 繰り返し使うrepo固有workflowを保持する
   - 主な依存先: `docs/policy-index.yaml`, `docs/project-spec.md`, `README.md`

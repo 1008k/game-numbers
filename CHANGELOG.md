@@ -1,6 +1,8 @@
 # Changelog
 
 ## [Unreleased]
+- Stitchなどへ持ち運べるデザイン方向テンプレートとして `DESIGN.md` を追加
+- UI/UXルールと `DESIGN.md` の責務分担を整理
 - テンプレート利用時に仕様文書の整合確認と初期具体化を進めやすくする補助workflowを追加
 - repo固有skillを追加すべき場面を判断できるガイドを追加
 

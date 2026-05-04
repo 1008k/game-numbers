@@ -8,9 +8,10 @@
 - 3. `docs/project-spec.md`
 - 4. `docs/rules-coding.md`
 - 5. `docs/rules-ux.md`（ユーザー向けUIの設計、実装、レビュー時）
-- 6. `docs/rules-writing.md`
-- 7. `README.md`
-- 8. `ARCHITECTURE.md`（テンプレート構成確認時、または実装済みの場合）
+- 6. `DESIGN.md`（ユーザー向けUIの視覚方向、モック、画面パターンを扱う場合）
+- 7. `docs/rules-writing.md`
+- 8. `README.md`
+- 9. `ARCHITECTURE.md`（テンプレート構成確認時、または実装済みの場合）
 
 ## 要点
 - このリポジトリは `docs-first` テンプレートです。
@@ -19,6 +20,7 @@
 - 実装スタック未確定なら、まず文書を整えます。
 - Webアプリの既定具体例は `policy.defaults.example_stacks.web_app` を参照します。
 - ユーザー向けUIを扱う場合は `policy.ui_ux` と `docs/rules-ux.md` を参照します。
+- UIの見た目やモックを扱う場合は `DESIGN.md` をプロジェクト固有のデザイン方向として参照します。
 - 実行コマンドは、実装雛形ができてから `README.md` に確定します。
 
 ## 補足

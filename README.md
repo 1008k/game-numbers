@@ -13,6 +13,7 @@
 ## What This Repository Provides
 - 初回要件整理のためのブリーフ
 - コア文書のひな形
+- AIデザインツールやコーディングエージェント間で持ち運ぶ `DESIGN.md`
 - エージェントが先に読むための `docs/policy-index.yaml`
 - 可変なプロジェクト基本情報を置く `docs/project-metadata.yaml`
 - 実装前に前提・対象範囲・非目的を固めるための導線
@@ -29,6 +30,7 @@
 
 ## Repository Layout
 - `README.md` : このテンプレートの使い方
+- `DESIGN.md` : Stitchなどへ持ち運ぶプロジェクト固有のデザイン方向と画面パターン（任意）
 - `ARCHITECTURE.md` : テンプレート構成の説明と、コピー後プロジェクトのコード構造補助文書（任意）
 - `.agents/skills/` : repo固有の再利用workflowを置くskillディレクトリ（任意）
 - `docs/initial-brief.md` : 初回要件整理の簡易ブリーフ
@@ -48,6 +50,7 @@
 
 ## AI Agent Workflow & Extensions
 - エージェントは最初に `docs/policy-index.yaml` を読み、参照先、優先順位、状態、既定判断を解決する。
+- ユーザー向けUIを扱う場合は、`docs/rules-ux.md` でUX判断を確認し、`DESIGN.md` がある場合はプロジェクト固有の視覚方向として参照する。
 - `AGENTS.md` は短い入口とし、`CLAUDE.md`, `GEMINI.md` などの各AI向けファイルは `AGENTS.md` を参照する連携窓口として扱う。
 - 詳細な運用ルールは `README.md` に重ねず、`docs/policy-index.yaml` と関連文書に置く。
 - repo固有の繰り返しworkflowは `.agents/skills/` に置き、常時効かせたい短いルールは `AGENTS.md` に残す。
