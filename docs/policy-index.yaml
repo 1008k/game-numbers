@@ -165,6 +165,13 @@ policy:
       local_write_access: possible
       network_access: possible
       setup_complexity: low
+    - name: context7
+      purpose: external-library-framework-and-api-documentation-lookup
+      default_status: recommended
+      permissions_level: moderate
+      local_write_access: not_required
+      network_access: required
+      setup_complexity: low
     - name: gitmcp
       purpose: read-external-github-repositories-and-documents
       default_status: optional
@@ -191,6 +198,7 @@ policy:
     project_type_first: true
     docs_first_until_stack_decided: true
     prefer_generic_tools_before_specialized_extensions: true
+    prefer_context7_for_external_docs_lookup: true
     remove_unnecessary_documents_or_sections: true
     keep_rules_minimal_and_deduplicated: true
     before_large_or_risky_changes:
