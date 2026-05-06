@@ -1,18 +1,18 @@
 # プロジェクト仕様書
 
-この文書は、初期段階では要件定義と仕様の正本を兼ねる文書です。参照先や優先順位は `docs/policy-index.yaml` を先に確認し、日々の実装判断は `docs/rules-coding.md`、セットアップと運用は `README.md` を参照してください。
+この文書は、初期段階では要件定義と仕様の正本を兼ねます。参照先や優先順位は `docs/policy-index.yaml` を先に確認し、日々の実装判断は `docs/rules-coding.md`、セットアップと運用は `README.md` を参照。
 
 ## この文書の位置づけ
-- この文書は「なぜ作るか」「何を作るか」「どこまでを対象にするか」「どのように振る舞えばよいか」「何を満たせばよいか」を定義する。
+- この文書は、目的、対象範囲、期待挙動、受け入れ条件を定義する。
 - 実装ルールやコーディングスタイルは `docs/rules-coding.md` で管理する。
 - 実装や文書更新の前に、完了条件と確認方法を明確にする。
-- 要件と仕様の分離が必要な規模になった場合は、`docs/requirements.md` を Why / What / constraints / out of scope の正本、`docs/spec.md` を Behavior / data model / API / acceptance criteria の正本として分割する。
+- 要件と仕様の分離が必要な規模になった場合は、`docs/requirements.md` を Why / What / constraints / out of scope の正本、`docs/spec.md` を Behavior / data model / API / acceptance criteria の正本に分割する。
 - 分割するまでは `requirements.md` や `spec.md` を追加せず、この文書に集約する。
 
 ## 1. 目的（Why）
 - 基本情報は `docs/project-metadata.yaml` を正本とする
 - 入力ブリーフ: `docs/initial-brief.md` を起点に必要事項を具体化する
-- 解決したい課題、成功条件、SEO、運用、収益に関する目的を必要に応じて明記する
+- 解決したい課題、成功条件、SEO、運用、収益に関する目的を必要なものだけ明記する
 - このリポジトリ自体はアプリ実装ではなく、新規プロジェクトへコピーして使う `docs-first` テンプレートとする
 - コピー後の個別プロジェクトでは、`docs/project-metadata.yaml` とこの文書を対象プロジェクトの内容に置き換える
 
@@ -23,25 +23,25 @@
 ## 3. 機能要件（What）
 - 機能ごとに、利用者の目的、入力、出力、完了条件を明記する
 - reviewit形式など、実装とレビューに使いやすい形式を採用してよい
-- 機能要件は、対象外や制約と矛盾しないように保つ
+- 機能要件は、対象外や制約と矛盾しないよう保つ
 
 ## 4. 振る舞い（Behavior）
 - 主要な画面、API、CLI、バッチ、状態遷移などの期待挙動を明記する
-- 正常系、例外系、空状態、権限不足、外部連携失敗時の扱いを必要に応じて明記する
+- 正常系、例外系、空状態、権限不足、外部連携失敗時の扱いを必要なものだけ明記する
 - 実装者やAIエージェントが推測しやすい分岐ほど、期待結果を具体化する
 - ユーザー向けUIを持つ場合は、画面ごとにユーザーの目的、最短の操作手順、主要アクション、ローディング、空状態、エラー状態を明記する
-- UI設計やレビューの詳細ルールは `docs/rules-ux.md` を参照し、プロジェクト固有の視覚方向や画面パターンは `DESIGN.md` に分ける
+- UI設計やレビューの詳細ルールは `docs/rules-ux.md` を参照し、デザイン方向や画面パターンは `DESIGN.md` に分ける
 
 ## 5. データ構造
 - APIレスポンス、DB、ローカル保存、設定ファイルなど、主要なデータ形を明記する
-- データの正本、更新タイミング、削除や保持の方針を必要に応じて明記する
+- データの正本、更新タイミング、削除や保持の方針を必要なものだけ明記する
 
 ## 6. 非機能要件
 - 保守しやすい構成であること
 - セキュアな既定値を持つこと
 - ローカル開発と CI の再現性があること
 - 対象実行環境で安定動作すること
-- パフォーマンス、可用性、監視、運用、対応環境の条件を必要に応じて明記する
+- パフォーマンス、可用性、監視、運用、対応環境の条件を必要なものだけ明記する
 
 ## 7. 制約
 - 技術制約、外部依存、利用できない選択肢、デプロイ先や運用環境の制約を明記する
@@ -64,17 +64,17 @@
 - 重要な既定値、制約、対象外はこの文書に残す。
 
 ## 10. 運用拡張の検討
-- 導入候補の棚卸し条件や整理観点は `docs/policy-index.yaml` の `policy.decision_defaults` と `policy.integration_catalog` を参照する
-- 補足説明や判断材料は `docs/integrations/README.md` と `docs/integrations/` 配下の補助文書を参照する
+- 導入候補の棚卸し条件や整理観点は `docs/policy-index.yaml` の `policy.decision_defaults` と `policy.integration_catalog` を参照。
+- 補足説明や判断材料は `docs/integrations/README.md` と `docs/integrations/` 配下の補助文書を参照。
 
 ## 11. 受け入れ条件
-- 詳細なチェック観点は `docs/policy-index.yaml` の `policy.acceptance_checks` を参照する
+- 詳細なチェック観点は `docs/policy-index.yaml` の `policy.acceptance_checks` を参照。
 - `docs/initial-brief.md` の未確定事項が整理されている
 - 非目的が明文化され、実装範囲の逸脱を判断できる
 - ユーザー向けUIを持つ場合は、主要画面のユーザー目的、最短フロー、主要状態が定義されている
 - ユーザー向けUIの視覚方向を継続的に揃える必要がある場合は、`DESIGN.md` にデザイン方向、主要コンポーネント、画面パターンが整理されている
 
 ## 12. リリース前チェック
-- 詳細なチェック観点は `docs/policy-index.yaml` の `policy.release_checks` を参照する
+- 詳細なチェック観点は `docs/policy-index.yaml` の `policy.release_checks` を参照。
 - 機密情報が含まれていない
 - `README.md` と `docs/rules-coding.md` と実装の整合が取れている
