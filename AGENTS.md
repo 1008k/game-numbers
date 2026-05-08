@@ -1,51 +1,29 @@
 # AGENTS.md
 
-エージェント向けの短い入口です。最初に `docs/policy-index.yaml` を読み、参照先と優先順位を解決。判断理由、例外、具体例は必要に応じて各 Markdown 文書で確認します。
+エージェント向けの短い入口です。最初に `docs/policy-index.yaml` を読み、参照先と優先順位を解決します。
 
 <!-- CODEX向けの設定 https://developers.openai.com/codex/memories  -->
  [features]
 memories = true
 
-<!--
-エージェント別の補足メモ:
-- `Codex` は上記の `[features]` を解釈します。
-- `Claude Code` は `AGENTS.md` 内の同等フラグを持たず、`CLAUDE.md` と `.claude/settings.json` を使います。
-- `Gemini CLI` も `AGENTS.md` 内の同等フラグを持たず、`GEMINI.md` と `.gemini/settings.json` を使います。
-- `Cursor` は root の `AGENTS.md` をシンプルな agent instructions として読めます。より強いネイティブ運用は `.cursor/rules` です。
-- `Windsurf` は `AGENTS.md` を標準で自動検出し、配置ディレクトリに応じてスコープ適用します。
-- このリポジトリでは `CLAUDE.md` と `GEMINI.md` から `AGENTS.md` を参照する構成にします。
--->
-
 ## 読み順
-- 1. `docs/policy-index.yaml`
-- 2. `docs/project-metadata.yaml`
-- 3. `docs/project-spec.md`
-- 4. `docs/rules-coding.md`
-- 5. `docs/rules-ux.md`（ユーザー向けUIの設計、実装、レビュー時）
-- 6. `DESIGN.md`（ユーザー向けUIの視覚方向、モック、画面パターンを扱う場合）
-- 7. `docs/rules-writing.md`
-- 8. `README.md`
-- 9. `ARCHITECTURE.md`（テンプレート構成確認時、または実装済みの場合）
+- `docs/policy-index.yaml`
+- 以降は `policy.authority.precedence` と `policy.operating_model.default_read_path` に従う
 
 ## 要点
 - このリポジトリは `docs-first` テンプレートです。
 - プロジェクト種別を先に整理します。
 - 可変な基本情報は `docs/project-metadata.yaml` に置きます。
 - 実装スタック未確定なら、まず文書を整えます。
-- Webアプリの既定具体例は `policy.defaults.example_stacks.web_app` を参照。
-- ユーザー向けUIを扱う場合は `policy.ui_ux` と `docs/rules-ux.md` を参照。
-- UIの見た目やモックを扱う場合は `DESIGN.md` を参照。
-- 実行コマンドは、実装雛形ができてから `README.md` に確定します。
-
-## 補足
-- `docs/policy-index.yaml` は参照ハブ、状態管理、静的チェック、既定判断の置き場です。
-- `docs/policy-index.yaml` のキー名と列挙値は、原則として英語で保ちます。
-- 各 Markdown 文書は、理由、例外、例示、長文説明の置き場です。
-- ルール追加時は、まず `docs/policy-index.yaml` に寄せられるか確認し、説明が必要な部分だけ Markdown に残します。
+- Codexへの依頼は、可能なら `Goal / Context / Constraints / Done when` の4点を含めます。
 
 ## エージェント向け最小ルール
 - 詳細は `policy.agent_minimum_rules` を参照。
 - 大きい変更では探索を先に行い、結論と短い計画を先に示します。
+
+## 完了条件と確認
+- タスク完了時は、実施した確認と未実施の確認を分けて扱います。
+- 変更が仕様、運用、設計判断に影響する場合は、対応する正本文書も更新対象に含めます。
 
 ## 進め方の既定
 - 詳細は `policy.decision_defaults` を参照。
@@ -53,7 +31,8 @@ memories = true
 
 ## 任意の拡張運用
 - 詳細は `policy.extension_policy` と `policy.integration_catalog` を参照。
-- 境界がある操作では、明示確認や専用手順を維持します。
+- repo固有の永続設定が必要になってから `.codex/config.toml` を追加します。
+- 同じ手順を繰り返すようになったら `.agents/skills/` への切り出しを検討します。
 
 ## トークン効率
 - 詳細は `policy.token_efficiency` を参照。

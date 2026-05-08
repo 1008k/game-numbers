@@ -225,6 +225,10 @@ policy:
     prioritize_quality_over_saving_tokens: true
     prefer_verification_over_shortcuts_when_evidence_is_weak: true
     start_from_primary_or_high_relevance_sources: true
+    keep_shared_instructions_stable: true
+    prefer_short_agent_entrypoint: true
+    keep_task_specific_details_out_of_shared_rules: true
+    avoid_frequent_rewrites_to_shared_instructions: true
     expand_search_scope_only_when_needed: true
     avoid_broad_full_file_reads_without_reason: true
     avoid_exhaustive_listing_without_reason: true

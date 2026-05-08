@@ -53,6 +53,16 @@
 - `AGENTS.md` は短い入口とし、`CLAUDE.md` や `GEMINI.md` などの各AI向けファイルはその参照窓口にする。
 - 詳細な運用ルールは `README.md` に重ねず、`docs/policy-index.yaml` と関連文書に置く。
 - リポジトリ固有の繰り返しワークフローは `.agents/skills/` に置き、常時適用したい短いルールは `AGENTS.md` に残す。
+- Codexへの依頼は、可能なら `Goal / Context / Constraints / Done when` を含める。
+- repo固有のCodex設定が必要になったら `.codex/config.toml` を追加し、個人設定は `~/.codex/config.toml` に分ける。
+- 自動化は、手動で安定した手順だけを対象にする。手順の定義は skill、実行スケジュールは automation と分けて考える。
+
+## Prompting Tips For Codex
+- `Goal`: 何を変えるか、何を作るか
+- `Context`: 関係するファイル、文書、エラー、参考実装
+- `Constraints`: 守るべき仕様、設計、禁止事項、互換条件
+- `Done when`: 完了条件。期待挙動、必要なテスト、確認観点
+- 毎回ほぼ同じ依頼文を少しずつ変えるより、固定ルールは `AGENTS.md` に寄せ、タスク固有情報だけを依頼本文に入れる。
 
 ## Recommended Optional Integrations
 - 汎用テンプレートの段階では、実装依存の強い拡張を最初から組み込まず、必要性が高いものだけを後から有効化する。
