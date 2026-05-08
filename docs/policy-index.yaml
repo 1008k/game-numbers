@@ -12,7 +12,7 @@ sources:
   architecture: ARCHITECTURE.md
   contributing: CONTRIBUTING.md
   changelog: CHANGELOG.md
-  project_metadata: docs/project-metadata.yaml
+  project_metadata: docs/project-spec.md
   adr_directory: docs/adr/
   integrations_directory: docs/integrations/
 
@@ -80,11 +80,10 @@ policy:
     writing_rules_source: docs/rules-writing.md
     design_direction_source: DESIGN.md
     specification_source: docs/project-spec.md
-    project_metadata_source: docs/project-metadata.yaml
+    project_metadata_source: docs/project-spec.md
     architecture_source: ARCHITECTURE.md
     precedence:
       - docs/policy-index.yaml
-      - docs/project-metadata.yaml
       - docs/project-spec.md
       - docs/rules-coding.md
       - docs/rules-ux.md
@@ -105,7 +104,6 @@ policy:
     human_readability: secondary
     default_read_path:
       - docs/policy-index.yaml
-      - docs/project-metadata.yaml
       - docs/project-spec.md
       - docs/rules-coding.md
       - docs/rules-ux.md
@@ -126,6 +124,13 @@ policy:
     file_case: kebab-case
     file_case_exceptions:
       - DESIGN.md
+      - README.md
+      - AGENTS.md
+      - ARCHITECTURE.md
+      - GEMINI.md
+      - CLAUDE.md
+      - CONTRIBUTING.md
+      - CHANGELOG.md
     generated_files_editable: false
     secrets_in_repository: false
     secrets_in_code: false
@@ -136,7 +141,6 @@ policy:
     - AGENTS.md
     - README.md
     - docs/initial-brief.md
-    - docs/project-metadata.yaml
     - docs/project-spec.md
     - docs/rules-coding.md
     - docs/rules-ux.md

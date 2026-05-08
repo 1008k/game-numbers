@@ -13,7 +13,7 @@ memories = true
 ## 要点
 - このリポジトリは `docs-first` テンプレートです。
 - プロジェクト種別を先に整理します。
-- 可変な基本情報は `docs/project-metadata.yaml` に置きます。
+- 可変な基本情報は `docs/project-spec.md` 冒頭の metadata に置きます。
 - 実装スタック未確定なら、まず文書を整えます。
 - Codexへの依頼は、可能なら `Goal / Context / Constraints / Done when` の4点を含めます。
 

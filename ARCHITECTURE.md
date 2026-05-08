@@ -19,8 +19,7 @@
   │   ├── integrations/            # 任意拡張の判断材料
   │   ├── initial-brief.md         # 初回要件整理の簡易ブリーフ
   │   ├── policy-index.yaml        # 参照ハブと静的項目（正本）
-  │   ├── project-metadata.yaml    # 可変な基本情報
-  │   ├── project-spec.md          # 要件定義と仕様の正本
+  │   ├── project-spec.md          # metadata を含む要件定義と仕様の正本
   │   ├── rules-coding.md          # 実装判断の説明
   │   ├── rules-ux.md              # UI/UX判断基準
   │   └── rules-writing.md         # 文書表記ルール
@@ -35,7 +34,7 @@
   ├── CHANGELOG.md                 # 重要な変更履歴
   └── README.md                    # 人とエージェント向け概要
   ```
-- 主要ファイル: `docs/policy-index.yaml` が参照ハブ、`docs/project-metadata.yaml` がテンプレート基本情報、`docs/project-spec.md` が要件定義と仕様の雛形を扱う。
+- 主要ファイル: `docs/policy-index.yaml` が参照ハブ、`docs/project-spec.md` がテンプレート基本情報と要件定義と仕様の雛形を扱う。
 - 補助ルール: `docs/rules-coding.md` が実装判断、`docs/rules-ux.md` がユーザー向けUI判断、`docs/rules-writing.md` が文書表記を扱う。
 - デザイン方向: `DESIGN.md` がユーザー向けUIを持つプロジェクトで、AIデザインツールやコーディングエージェント間に持ち運ぶ視覚方向、コンポーネント規則、画面パターンを扱う。
 - レイヤーやモジュールの分け方: 実装レイヤーはまだ持たず、文書の正本、説明文書、任意テンプレート、補助ワークフローを分ける。
@@ -45,14 +44,10 @@
   - 役割: 参照先、優先順位、状態、静的チェック、既定判断を集約する
   - 主な依存先: なし
   - 変更時の注意: Markdown文書に置くべき理由説明や例示を増やしすぎない
-- `docs/project-metadata.yaml`:
-  - 役割: テンプレート自身またはコピー後プロジェクトの短い基本情報を保持する
-  - 主な依存先: `docs/project-spec.md`
-  - 変更時の注意: 長い理由や制約は仕様文書へ寄せる
 - `docs/project-spec.md`:
-  - 役割: なぜ作るか、何を作るか、対象範囲、振る舞い、データ構造、非目的、受け入れ条件を具体化
-  - 主な依存先: `docs/project-metadata.yaml`, `docs/initial-brief.md`
-  - 変更時の注意: 実装ルールやセットアップ手順を重複させない
+  - 役割: 冒頭の metadata と本文で、短い基本情報、なぜ作るか、何を作るか、対象範囲、振る舞い、データ構造、非目的、受け入れ条件を具体化
+  - 主な依存先: `docs/initial-brief.md`
+  - 変更時の注意: metadata には短い事実だけを置き、長い理由や制約、実装ルールやセットアップ手順を重複させない
 - `docs/rules-ux.md`:
   - 役割: ユーザー向けUIの設計、実装、レビュー時の判断基準を保持
   - 主な依存先: `docs/policy-index.yaml`, `docs/project-spec.md`, `DESIGN.md`
@@ -68,7 +63,7 @@
 
 ## 4. データや処理の流れ
 - 主な入力: `docs/initial-brief.md` に書かれた初期要件
-- 中心ロジック: `docs/policy-index.yaml` の参照優先順位に従い、metadata、仕様、ルール文書を具体化する
+- 中心ロジック: `docs/policy-index.yaml` の参照優先順位に従い、spec 冒頭の metadata、仕様、ルール文書を具体化する
 - 外部出力: コピー後プロジェクトのREADME、仕様、実装雛形、必要に応じたADR
 - 境界がある箇所: 外部連携、認証、常駐処理、監査やセキュリティに関わる拡張の導入判断
 

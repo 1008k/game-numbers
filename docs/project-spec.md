@@ -1,20 +1,46 @@
+---
+version: 1
+
+project:
+  name: "Project Starter Template"
+  summary: "AIエージェントとdocs-firstで新規プロジェクトを立ち上げるためのテンプレート"
+  goal: "要件、仕様、運用ルールを先に整理し、実装へ進む土台を提供する"
+  target_users_and_scope: "AIエージェント中心で新規開発プロジェクトを始める開発者"
+  category: "docs-first template"
+
+template:
+  is_template: true
+  intended_use: copy-for-new-project
+  replace_project_fields_after_copy: true
+
+status:
+  brief_source: docs/initial-brief.md
+  metadata_state: draft
+
+conventions:
+  language_for_keys: english
+  keep_values_short: true
+  rationale_belongs_in: docs/project-spec.md
+---
+
 # プロジェクト仕様書
 
 この文書は、初期段階では要件定義と仕様の正本を兼ねます。参照先や優先順位は `docs/policy-index.yaml` を先に確認し、日々の実装判断は `docs/rules-coding.md`、セットアップと運用は `README.md` を参照。
 
 ## この文書の位置づけ
 - この文書は、目的、対象範囲、期待挙動、受け入れ条件を定義する。
+- 文書冒頭の YAML frontmatter は、短い基本情報の正本として扱う。
 - 実装ルールやコーディングスタイルは `docs/rules-coding.md` で管理する。
 - 実装や文書更新の前に、完了条件と確認方法を明確にする。
 - 要件と仕様の分離が必要な規模になった場合は、`docs/requirements.md` を Why / What / constraints / out of scope の正本、`docs/spec.md` を Behavior / data model / API / acceptance criteria の正本に分割する。
 - 分割するまでは `requirements.md` や `spec.md` を追加せず、この文書に集約する。
 
 ## 1. 目的（Why）
-- 基本情報は `docs/project-metadata.yaml` を正本とする
+- 基本情報はこの文書冒頭の YAML frontmatter を正本とする
 - 入力ブリーフ: `docs/initial-brief.md` を起点に必要事項を具体化する
 - 解決したい課題、成功条件、SEO、運用、収益に関する目的を必要なものだけ明記する
 - このリポジトリ自体はアプリ実装ではなく、新規プロジェクトへコピーして使う `docs-first` テンプレートとする
-- コピー後の個別プロジェクトでは、`docs/project-metadata.yaml` とこの文書を対象プロジェクトの内容に置き換える
+- コピー後の個別プロジェクトでは、この文書冒頭の metadata と本文を対象プロジェクトの内容に置き換える
 
 ## 2. スコープ
 - 今回作る対象、主な利用者、利用シーンを明記する
@@ -45,7 +71,7 @@
 
 ## 7. 制約
 - 技術制約、外部依存、利用できない選択肢、デプロイ先や運用環境の制約を明記する
-- 想定カテゴリは `docs/project-metadata.yaml` を参照する
+- 想定カテゴリはこの文書冒頭の YAML frontmatter を参照する
 - 実装スタックは、要件に対して最小構成になるものを選ぶ
 - 依存や基盤選定の詳細判断は `docs/rules-coding.md` に従う
 - 技術スタックの既定具体例や参照順は `docs/policy-index.yaml` と `AGENTS.md` を参照する

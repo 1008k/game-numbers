@@ -14,7 +14,7 @@
 - コア文書のひな形
 - AIデザインツールやコーディングエージェント間で持ち運ぶ `DESIGN.md`
 - エージェントの先読みに使う `docs/policy-index.yaml`
-- 可変なプロジェクト基本情報を置く `docs/project-metadata.yaml`
+- 可変なプロジェクト基本情報を含む `docs/project-spec.md`
 - 実装前に前提・対象範囲・非目的を固める導線
 - テンプレート構成を説明し、コピー後は実装構造に合わせて更新する `ARCHITECTURE.md`
 - 重要な設計判断を残す ADR テンプレート
@@ -22,7 +22,7 @@
 ## Getting Started
 1. このリポジトリを新規プロジェクト用にコピーする
 2. `docs/initial-brief.md` を粗く埋める
-3. `docs/project-metadata.yaml` の基本項目を埋める
+3. `docs/project-spec.md` 冒頭の metadata と本文の基本項目を埋める
 4. AIエージェントに、このリポジトリを読ませたうえでコア文書を具体化させる
 5. 文書が固まったら、必要な実装や技術スタックの初期化に進む
 6. 実装を始めたら、`README.md`、`docs/project-spec.md`、`ARCHITECTURE.md` を実態に合わせて更新し続ける
@@ -33,9 +33,8 @@
 - `ARCHITECTURE.md` : テンプレート構成の説明と、コピー後プロジェクトのコード構造補助文書（任意）
 - `.agents/skills/` : repo固有の再利用workflowを置くskillディレクトリ（任意）
 - `docs/initial-brief.md` : 初回要件整理の簡易ブリーフ
-- `docs/project-metadata.yaml` : 可変な基本情報
 - `docs/integrations/` : 拡張導入判断の補助文書
-- `docs/project-spec.md` : 要件定義、仕様、スコープ外、受け入れ条件の正本
+- `docs/project-spec.md` : metadata を含む要件定義、仕様、スコープ外、受け入れ条件の正本
 - `docs/rules-coding.md` : 実装判断の説明
 - `docs/rules-ux.md` : ユーザー向けUIの設計、実装、レビュー時の判断基準
 - `docs/rules-writing.md` : 文書表記ルール
@@ -73,7 +72,7 @@
 ## Maintenance Notes
 - 技術固有メモや実装コマンドは、採用スタック決定後に必要な分だけ追加する
 - `ARCHITECTURE.md` はこのテンプレートの構成を説明し、コピー後は現在のコード構造に合わせて更新する
-- `docs/policy-index.yaml` は参照ハブ、`docs/project-metadata.yaml` は短い事実、理由や制約は Markdown に分ける
+- `docs/policy-index.yaml` は参照ハブ、短い基本情報は `docs/project-spec.md` 冒頭の metadata、理由や制約は本文へ分ける
 
 ## License / Publication Policy
 このテンプレートのライセンスは現時点では未定義です。
