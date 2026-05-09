@@ -73,6 +73,7 @@ conventions:
 - 技術制約、外部依存、利用できない選択肢、デプロイ先や運用環境の制約を明記する
 - 想定カテゴリはこの文書冒頭の YAML frontmatter を参照する
 - 実装スタックは、要件に対して最小構成になるものを選ぶ
+- 例: JavaScript / TypeScript プロジェクトの場合は `Bun`, `Vite`, `Biome` などを候補にできる
 - 依存や基盤選定の詳細判断は `docs/rules-coding.md` に従う
 - 技術スタックの既定具体例や参照順は `docs/policy-index.yaml` と `AGENTS.md` を参照する
 - 既定案や慣習から外す場合は、要件との対応理由を明記する
