@@ -17,7 +17,7 @@
 - 可変なプロジェクト基本情報を含む `docs/project-spec.md`
 - 実装前に前提・対象範囲・非目的を固める導線
 - テンプレート構成を説明し、コピー後は実装構造に合わせて更新する `ARCHITECTURE.md`
-- 重要な設計判断を残す ADR テンプレート
+- 大きめの変更を仕様、計画、確認ごと残す `track` テンプレート
 
 ## Getting Started
 1. このリポジトリを新規プロジェクト用にコピーする
@@ -38,8 +38,8 @@
 - `docs/rules-coding.md` : 実装判断の説明
 - `docs/rules-ux.md` : ユーザー向けUIの設計、実装、レビュー時の判断基準
 - `docs/rules-writing.md` : 文書表記ルール
+- `docs/tracks/` : 大きめの変更や作業を残す track テンプレートと作業記録（任意）
 - `docs/policy-index.yaml` : 参照ハブと読取順
-- `docs/adr/` : 設計判断の記録テンプレート（任意）
 - `AGENTS.md` : AIエージェント向け入口
 - `CLAUDE.md`, `GEMINI.md` : `AGENTS.md` の互換入口
 - `.cursorrules`, `.windsurfrules` : `AGENTS.md` の互換入口（Cursor, Windsurf向け）
@@ -55,6 +55,8 @@
 - Codexへの依頼は、可能なら `Goal / Context / Constraints / Done when` を含める。
 - repo固有のCodex設定が必要になったら `.codex/config.toml` を追加し、個人設定は `~/.codex/config.toml` に分ける。
 - 自動化は、手動で安定した手順だけを対象にする。手順の定義は skill、実行スケジュールは automation と分けて考える。
+- 大きめの変更では `docs/tracks/` に背景、スコープ、主要判断、実施計画、完了条件を残し、恒久ルールだけを正本文書へ反映する。
+- 利用者向けに共有したい変更は `CHANGELOG.md` に残し、必要なら関連する `track` を参照する。
 
 ## Prompting Tips For Codex
 - `Goal`: 何を変えるか、何を作るか
@@ -73,6 +75,7 @@
 - 技術固有メモや実装コマンドは、採用スタック決定後に必要な分だけ追加する
 - `ARCHITECTURE.md` はこのテンプレートの構成を説明し、コピー後は現在のコード構造に合わせて更新する
 - `docs/policy-index.yaml` は参照ハブに限定し、短い基本情報は `docs/project-spec.md` 冒頭の metadata、理由や制約は本文へ分ける
+- `docs/tracks/` は軽微修正では必須にせず、中規模以上の変更で必要になったときだけ使う
 
 ## License / Publication Policy
 このテンプレートのライセンスは現時点では未定義です。

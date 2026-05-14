@@ -1,0 +1,10 @@
+id: "YYYYMMDD-short-title"
+title: "<Title>"
+status: draft
+type: feature
+summary: "<1行要約>"
+related_issue: ""
+related_pr: ""
+owners:
+  - ""
+updated_at: "YYYY-MM-DD"

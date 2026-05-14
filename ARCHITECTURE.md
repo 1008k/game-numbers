@@ -15,12 +15,12 @@
   .
   ├── .agents/skills/              # リポジトリ固有の再利用ワークフロー
   ├── docs/
-  │   ├── adr/                     # 設計判断記録のテンプレート
   │   ├── integrations/            # 任意拡張の判断材料
   │   ├── initial-brief.md         # 初回要件整理の簡易ブリーフ
   │   ├── policy-index.yaml        # 参照ハブと静的項目（正本）
   │   ├── project-spec.md          # metadata を含む要件定義と仕様の正本
   │   ├── rules-coding.md          # 実装判断の説明
+  │   ├── tracks/                  # 大きめの変更の作業文脈とテンプレート
   │   ├── rules-ux.md              # UI/UX判断基準
   │   └── rules-writing.md         # 文書表記ルール
   ├── AGENTS.md                    # AIエージェント向け入口
@@ -36,6 +36,7 @@
   ```
 - 主要ファイル: `docs/policy-index.yaml` が参照ハブ、`docs/project-spec.md` がテンプレート基本情報と要件定義と仕様の雛形を扱う。
 - 補助ルール: `docs/rules-coding.md` が実装判断、`docs/rules-ux.md` がユーザー向けUI判断、`docs/rules-writing.md` が文書表記を扱う。
+- 作業文脈: `docs/tracks/` が大きめの変更の背景、スコープ、計画、確認をまとめる。
 - デザイン方向: `DESIGN.md` がユーザー向けUIを持つプロジェクトで、AIデザインツールやコーディングエージェント間に持ち運ぶ視覚方向、コンポーネント規則、画面パターンを扱う。
 - レイヤーやモジュールの分け方: 実装レイヤーはまだ持たず、文書の正本、説明文書、任意テンプレート、補助ワークフローを分ける。
 
@@ -64,7 +65,7 @@
 ## 4. データや処理の流れ
 - 主な入力: `docs/initial-brief.md` に書かれた初期要件
 - 中心ロジック: `docs/policy-index.yaml` の参照優先順位に従い、spec 冒頭の metadata、仕様、ルール文書を具体化する
-- 外部出力: コピー後プロジェクトのREADME、仕様、実装雛形、必要に応じたADR
+- 外部出力: コピー後プロジェクトのREADME、仕様、実装雛形、必要に応じたtrack
 - 境界がある箇所: 外部連携、認証、常駐処理、監査やセキュリティに関わる拡張の導入判断
 
 ## 5. 外部連携

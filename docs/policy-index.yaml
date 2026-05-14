@@ -12,7 +12,7 @@ sources:
   architecture: ARCHITECTURE.md
   contributing: CONTRIBUTING.md
   changelog: CHANGELOG.md
-  adr_directory: docs/adr/
+  tracks_directory: docs/tracks/
   integrations_directory: docs/integrations/
 
 policy:
@@ -37,11 +37,7 @@ policy:
       - ARCHITECTURE.md
       - CONTRIBUTING.md
       - CHANGELOG.md
-      - docs/adr/
-    adr_handling:
-      type: optional-decision-records
-      precedence_mode: consulted-when-relevant
-      directory_must_exist: false
+      - docs/tracks/
 
   operating_model:
     primary_audience: coding-agents
@@ -95,7 +91,7 @@ policy:
     - ARCHITECTURE.md
     - CONTRIBUTING.md
     - CHANGELOG.md
-    - docs/adr/
+    - docs/tracks/
 
   decision_defaults:
     project_type_first: true
