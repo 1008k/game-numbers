@@ -91,17 +91,21 @@ conventions:
 - 重要な既定値、制約、対象外はこの文書に残す。
 
 ## 10. 運用拡張の検討
-- 導入候補の棚卸し条件や整理観点は `docs/policy-index.yaml` の `policy.decision_defaults` と `policy.integration_catalog` を参照。
+- 導入候補の棚卸し条件や整理観点は `docs/integrations/README.md` を参照。
 - 補足説明や判断材料は `docs/integrations/README.md` と `docs/integrations/` 配下の補助文書を参照。
 
 ## 11. 受け入れ条件
-- 詳細なチェック観点は `docs/policy-index.yaml` の `policy.acceptance_checks` を参照。
 - `docs/initial-brief.md` の未確定事項が整理されている
 - 非目的が明文化され、実装範囲の逸脱を判断できる
+- 実装を始める段階なら、主要コマンドや日常運用手順が `README.md` に定義されている
+- `lint`、`test`、`build` などを採用した場合は、実行方針が定義されている
+- 重要ロジックがある場合は、テスト方針が定義されている
+- 依存追加や外部通信がある場合は、必要性と影響範囲を説明できる
 - ユーザー向けUIを持つ場合は、主要画面のユーザー目的、最短フロー、主要状態が定義されている
 - ユーザー向けUIの視覚方向を継続的に揃える必要がある場合は、`DESIGN.md` にデザイン方向、主要コンポーネント、画面パターンが整理されている
 
 ## 12. リリース前チェック
-- 詳細なチェック観点は `docs/policy-index.yaml` の `policy.release_checks` を参照。
 - 機密情報が含まれていない
+- 不要な生成物、ローカル専用ファイル、一時検証ファイルが含まれていない
 - `README.md` と `docs/rules-coding.md` と実装の整合が取れている
+- 未実装事項や既知の制約が重要なら、利用者が分かる場所に記録されている

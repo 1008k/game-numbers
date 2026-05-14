@@ -31,14 +31,14 @@
 - `README.md` : このテンプレートの使い方
 - `DESIGN.md` : Stitchなどへ持ち運ぶプロジェクト固有のデザイン方向と画面パターン（任意）
 - `ARCHITECTURE.md` : テンプレート構成の説明と、コピー後プロジェクトのコード構造補助文書（任意）
-- `.agents/skills/` : repo固有の再利用workflowを置くskillディレクトリ（任意）
+- `.agents/skills/` : repo固有の再利用ワークフローを置く skill ディレクトリ（任意）
 - `docs/initial-brief.md` : 初回要件整理の簡易ブリーフ
 - `docs/integrations/` : 拡張導入判断の補助文書
 - `docs/project-spec.md` : metadata を含む要件定義、仕様、スコープ外、受け入れ条件の正本
 - `docs/rules-coding.md` : 実装判断の説明
 - `docs/rules-ux.md` : ユーザー向けUIの設計、実装、レビュー時の判断基準
 - `docs/rules-writing.md` : 文書表記ルール
-- `docs/policy-index.yaml` : 参照ハブと静的項目
+- `docs/policy-index.yaml` : 参照ハブと読取順
 - `docs/adr/` : 設計判断の記録テンプレート（任意）
 - `AGENTS.md` : AIエージェント向け入口
 - `CLAUDE.md`, `GEMINI.md` : `AGENTS.md` の互換入口
@@ -47,10 +47,10 @@
 - `CHANGELOG.md` : 重要な変更履歴（任意）
 
 ## AI Agent Workflow & Extensions
-- エージェントは最初に `docs/policy-index.yaml` を読み、参照先、優先順位、状態、既定判断を解決する。
+- エージェントは最初に `docs/policy-index.yaml` を読み、参照先、優先順位、読取順、最小既定を解決する。
 - ユーザー向けUIを扱う場合は、`docs/rules-ux.md` でUXルールを確認し、`DESIGN.md` があれば参照する。
 - `AGENTS.md` は短い入口とし、`CLAUDE.md` や `GEMINI.md` などの各AI向けファイルはその参照窓口にする。
-- 詳細な運用ルールは `README.md` に重ねず、`docs/policy-index.yaml` と関連文書に置く。
+- `docs/policy-index.yaml` は参照ハブにとどめ、詳細な運用ルールは対応する Markdown 文書に置く。
 - リポジトリ固有の繰り返しワークフローは `.agents/skills/` に置き、常時適用したい短いルールは `AGENTS.md` に残す。
 - Codexへの依頼は、可能なら `Goal / Context / Constraints / Done when` を含める。
 - repo固有のCodex設定が必要になったら `.codex/config.toml` を追加し、個人設定は `~/.codex/config.toml` に分ける。
@@ -65,14 +65,14 @@
 
 ## Recommended Optional Integrations
 - 汎用テンプレートの段階では、実装依存の強い拡張を最初から組み込まず、必要性が高いものだけを後から有効化する。
-- 候補一覧と既定ステータスは `docs/policy-index.yaml` の `policy.integration_catalog` を参照する。
+- 候補整理の入口は `docs/integrations/README.md` を参照する。
 - 補足説明や判断材料は `docs/integrations/` を参照する。
 - リポジトリ内skillを追加すべき条件は `docs/integrations/skills.md` を参照する。
 
 ## Maintenance Notes
 - 技術固有メモや実装コマンドは、採用スタック決定後に必要な分だけ追加する
 - `ARCHITECTURE.md` はこのテンプレートの構成を説明し、コピー後は現在のコード構造に合わせて更新する
-- `docs/policy-index.yaml` は参照ハブ、短い基本情報は `docs/project-spec.md` 冒頭の metadata、理由や制約は本文へ分ける
+- `docs/policy-index.yaml` は参照ハブに限定し、短い基本情報は `docs/project-spec.md` 冒頭の metadata、理由や制約は本文へ分ける
 
 ## License / Publication Policy
 このテンプレートのライセンスは現時点では未定義です。

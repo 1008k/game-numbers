@@ -2,7 +2,7 @@
 
 ## Status
 `proposed` / `decided` / `implemented` のいずれかを記載する。
-取り得る値は `docs/policy-index.yaml` の `policy.allowed_values.decision_stages` を参照する。
+必要ならこのテンプレート内の3値に限定し、追加の状態を使う場合は理由を文書内に残す。
 
 ## Context
 - 背景: `<背景>`
