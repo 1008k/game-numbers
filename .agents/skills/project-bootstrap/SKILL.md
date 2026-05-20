@@ -10,7 +10,7 @@ description: Concretize a new project from `docs/initial-brief.md` into `docs/pr
 
 ## 前提
 - 最初に `docs/policy-index.yaml` を読む
-- 次に `docs/project-metadata.yaml` と `docs/project-spec.md` を確認する
+- 次に `docs/project-spec.md` を確認する
 - 必要に応じて `README.md` と `AGENTS.md` を参照する
 
 ## 目的
@@ -20,7 +20,7 @@ description: Concretize a new project from `docs/initial-brief.md` into `docs/pr
 
 ## 手順
 1. `docs/initial-brief.md` から、プロジェクト名、種別、目的、対象ユーザー、必須機能、非目的、制約、未定事項を抽出する。
-2. `docs/project-metadata.yaml` に、短く安定した事実だけを入れる。
+2. `docs/project-spec.md` 冒頭の YAML frontmatter に、短く安定した事実だけを入れる。
 3. `docs/project-spec.md` に、以下を具体化する。
    - プロジェクト概要
    - 非目的
@@ -31,13 +31,13 @@ description: Concretize a new project from `docs/initial-brief.md` into `docs/pr
 5. スタックが未確定なら、実装コマンドや技術固有ルールを増やさない。
 
 ## 記入ルール
-- `docs/project-metadata.yaml` には理由や長文を書かない
-- 理由、判断材料、例外は `docs/project-spec.md` に寄せる
+- `docs/project-spec.md` 冒頭の YAML frontmatter には理由や長文を書かない
+- 理由、判断材料、例外は `docs/project-spec.md` 本文に寄せる
 - 初期段階では、詳細設計や運用拡張を早く決めすぎない
 - 仕様が曖昧なままテンプレート既定を事実のように書かない
 
 ## 完了の目安
-- `docs/project-metadata.yaml` の基本項目が埋まっている
+- `docs/project-spec.md` 冒頭の YAML frontmatter の基本項目が埋まっている
 - `docs/project-spec.md` の非目的が書かれている
 - `docs/initial-brief.md` の未定事項が識別できる
 - 実装開始前に詰めるべき論点が残っていれば明示されている
