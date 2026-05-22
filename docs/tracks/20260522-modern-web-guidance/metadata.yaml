@@ -1,0 +1,10 @@
+id: "20260522-modern-web-guidance"
+title: "Modern Web Guidance integration"
+status: done
+type: docs
+summary: "Web UI 案件向けに Modern Web Guidance の導入判断と最小ルールを追加"
+related_issue: ""
+related_pr: ""
+owners:
+  - "codex"
+updated_at: "2026-05-22"

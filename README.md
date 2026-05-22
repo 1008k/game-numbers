@@ -69,6 +69,7 @@
 - 汎用テンプレートの段階では、実装依存の強い拡張を最初から組み込まず、必要性が高いものだけを後から有効化する。
 - 候補整理の入口は `docs/integrations/README.md` を参照する。
 - 補足説明や判断材料は `docs/integrations/` を参照する。
+- ブラウザ向けUIを持つ案件では、`docs/integrations/modern-web-guidance.md` を入口に、アクセシビリティ、性能、セキュリティの改善観点を追加で検討できる。
 - リポジトリ内skillを追加すべき条件は `docs/integrations/skills.md` を参照する。
 
 ## Maintenance Notes
