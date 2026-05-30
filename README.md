@@ -1,86 +1,47 @@
-# Project Starter Template
+# 計算パネルパズル
 
-このテンプレートは、AIコーディングエージェントと開発プロジェクトを立ち上げ、そのまま実装リポジトリへ育てる `docs-first` の土台です。
-完成済みのアプリ実装は含まず、要件・仕様・運用ルールを先に固めてから実装へ進みたいケースを想定しています。
+`計算パネルパズル` は、数字パネルと演算子パネルを消費しながら複数のターゲット数字を成立させる、スマホ向けの計算ロジックパズル企画です。
+
+このリポジトリは、Godot 4.x/GDScriptで実装へ進む前の仕様、デザイン方向、実装ルールを整理するdocs-firstの企画リポジトリです。現時点ではアプリ実装は含みません。
 
 ## Overview
-- 新規の開発プロジェクトを、要件整理から素早く始めたい
-- 仕様や非目的を先に明文化して、実装時の迷いを減らしたい
-- AIエージェント中心で初回セットアップと文書具体化を進めたい
-- Webアプリ、CLI、ライブラリ、社内ツールなどに流用したい
+- ジャンル: 数字パズル、ロジックパズル、脳トレ、カジュアルゲーム
+- 対象: iOS / Android
+- エンジン: Godot 4.x
+- 言語: GDScript
+- 画面方向: 縦固定
+- MVP: ターゲット3個、有限パネル、四則演算、ミス3回、広告復活1回
 
-## What This Repository Provides
-- 初回要件整理用ブリーフ
-- コア文書のひな形
-- AIデザインツールやコーディングエージェント間で持ち運ぶ `DESIGN.md`
-- エージェントの先読みに使う `docs/policy-index.yaml`
-- 可変なプロジェクト基本情報を含む `docs/project-spec.md`
-- 実装前に前提・対象範囲・非目的を固める導線
-- テンプレート構成を説明し、コピー後は実装構造に合わせて更新する `ARCHITECTURE.md`
-- 大きめの変更を仕様、計画、確認ごと残す `track` テンプレート
+## Core Idea
+- ターゲット数字を選ぶ。
+- 数字、演算子、数字の順にパネルを選んで式を作る。
+- 正解した式で使ったパネルは消費される。
+- すべてのターゲットを成立させるとステージクリア。
 
-## Getting Started
-1. このリポジトリを新規プロジェクト用にコピーする
-2. `docs/initial-brief.md` を粗く埋める
-3. `docs/project-spec.md` 冒頭の metadata と本文の基本項目を埋める
-4. AIエージェントに、このリポジトリを読ませたうえでコア文書を具体化させる
-5. 文書が固まったら、必要な実装や技術スタックの初期化に進む
-6. 実装を始めたら、`README.md`、`docs/project-spec.md`、`ARCHITECTURE.md` を実態に合わせて更新し続ける
+本作の主軸は計算ドリルではなく、限られた数字リソースをどのターゲットへ配分するかを考えるリソース管理型ロジックパズルです。
 
-## Repository Layout
-- `README.md` : このテンプレートの使い方
-- `DESIGN.md` : Stitchなどへ持ち運ぶプロジェクト固有のデザイン方向と画面パターン（任意）
-- `ARCHITECTURE.md` : テンプレート構成の説明と、コピー後プロジェクトのコード構造補助文書（任意）
-- `.agents/skills/` : repo固有の再利用ワークフローを置く skill ディレクトリ（任意）
-- `docs/initial-brief.md` : 初回要件整理の簡易ブリーフ
-- `docs/integrations/` : 拡張導入判断の補助文書
-- `docs/project-spec.md` : metadata を含む要件定義、仕様、スコープ外、受け入れ条件の正本
-- `docs/rules-coding.md` : 実装判断の説明
-- `docs/rules-ux.md` : ユーザー向けUIの設計、実装、レビュー時の判断基準
-- `docs/rules-writing.md` : 文書表記ルール
-- `docs/tracks/` : 大きめの変更や作業を残す track テンプレートと作業記録（任意）
-- `docs/policy-index.yaml` : 参照ハブと読取順
-- `AGENTS.md` : AIエージェント向け入口
-- `CLAUDE.md`, `GEMINI.md` : `AGENTS.md` の互換入口
-- `.cursorrules`, `.windsurfrules` : `AGENTS.md` の互換入口（Cursor, Windsurf向け）
-- `CONTRIBUTING.md` : 変更提案の補助文書（任意）
-- `CHANGELOG.md` : 重要な変更履歴（任意）
+## Documents
+- `docs/policy-index.yaml`: 参照ハブと文書優先順位
+- `docs/project-spec.md`: 要件、仕様、MVP範囲、受け入れ条件の正本
+- `DESIGN.md`: 電卓風UI、画面パターン、視覚方向
+- `docs/rules-coding.md`: 実装判断とGodot/GDScript向けの最小ルール
+- `docs/rules-ux.md`: UI/UX判断基準
+- `ARCHITECTURE.md`: 想定シーン、スクリプト、責務分割
+- `docs/tracks/`: 大きめの変更の作業文脈
 
-## AI Agent Workflow & Extensions
-- エージェントは最初に `docs/policy-index.yaml` を読み、参照先、優先順位、読取順、最小既定を解決する。
-- ユーザー向けUIを扱う場合は、`docs/rules-ux.md` でUXルールを確認し、`DESIGN.md` があれば参照する。
-- `AGENTS.md` は短い入口とし、`CLAUDE.md` や `GEMINI.md` などの各AI向けファイルはその参照窓口にする。
-- `docs/policy-index.yaml` は参照ハブにとどめ、詳細な運用ルールは対応する Markdown 文書に置く。
-- リポジトリ固有の繰り返しワークフローは `.agents/skills/` に置き、常時適用したい短いルールは `AGENTS.md` に残す。
-- Codexへの依頼は、可能なら `Goal / Context / Constraints / Done when` を含める。
-- repo固有のCodex設定が必要になったら `.codex/config.toml` を追加し、個人設定は `~/.codex/config.toml` に分ける。
-- 自動化は、手動で安定した手順だけを対象にする。手順の定義は skill、実行スケジュールは automation と分けて考える。
-- 大きめの変更では `docs/tracks/` に背景、スコープ、主要判断、実施計画、完了条件を残し、恒久ルールだけを正本文書へ反映する。
-- 利用者向けに共有したい変更は `CHANGELOG.md` に残し、必要なら関連する `track` を参照する。
+## Current Status
+- 仕様整理中。
+- 実装スタックはGodot 4.x/GDScriptを前提にする。
+- 広告SDK、課金、ストア公開、初期ステージ数、スコア計算は未確定。
 
-## Prompting Tips For Codex
-- `Goal`: 何を変えるか、何を作るか
-- `Context`: 関係するファイル、文書、エラー、参考実装
-- `Constraints`: 守るべき仕様、設計、禁止事項、互換条件
-- `Done when`: 完了条件。期待挙動、必要なテスト、確認観点
-- 毎回ほぼ同じ依頼文を少しずつ変えるより、固定ルールは `AGENTS.md` に寄せ、タスク固有情報だけを依頼本文に入れる。
-
-## Recommended Optional Integrations
-- 汎用テンプレートの段階では、実装依存の強い拡張を最初から組み込まず、必要性が高いものだけを後から有効化する。
-- 候補整理の入口は `docs/integrations/README.md` を参照する。
-- 補足説明や判断材料は `docs/integrations/` を参照する。
-- ブラウザ向けUIを持つ案件では、`docs/integrations/modern-web-guidance.md` を入口に、アクセシビリティ、性能、セキュリティの改善観点を追加で検討できる。
-- リポジトリ内skillを追加すべき条件は `docs/integrations/skills.md` を参照する。
+## Agent Workflow
+- 最初に `docs/policy-index.yaml` を読み、参照先と優先順位を確認する。
+- 仕様判断は `docs/project-spec.md` を優先する。
+- UIや画面生成は `DESIGN.md` と `docs/rules-ux.md` を参照する。
+- 実装構造や責務分割は `ARCHITECTURE.md` と `docs/rules-coding.md` を参照する。
+- 仕様、設計、運用に影響する大きめの変更では `docs/tracks/` に作業文脈を残す。
 
 ## Maintenance Notes
-- 技術固有メモや実装コマンドは、採用スタック決定後に必要な分だけ追加する
-- `ARCHITECTURE.md` はこのテンプレートの構成を説明し、コピー後は現在のコード構造に合わせて更新する
-- `docs/policy-index.yaml` は参照ハブに限定し、短い基本情報は `docs/project-spec.md` 冒頭の metadata、理由や制約は本文へ分ける
-- `docs/tracks/` は軽微修正では必須にせず、中規模以上の変更で必要になったときだけ使う
-
-## License / Publication Policy
-このテンプレートのライセンスは現時点では未定義です。
-公開、再配布、社外利用を行う前に、`LICENSE` の追加または利用範囲の明記を行ってください。
-
-## Contributing
-改善方針は [CONTRIBUTING.md](./CONTRIBUTING.md) を参照。
+- READMEには入口情報だけを置き、仕様詳細は `docs/project-spec.md` に集約する。
+- 実装を追加したら、セットアップ、実行、テスト、ビルド手順をこのREADMEに追記する。
+- 実装構造が変わったら `ARCHITECTURE.md` を更新する。
