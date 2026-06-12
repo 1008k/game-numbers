@@ -3,7 +3,9 @@
 エージェント向けの短い入口です。最初に `docs/policy-index.yaml` を読み、参照先と優先順位を解決します。
 
 <!-- CODEX向けの設定 https://developers.openai.com/codex/memories  -->
- [features]
+[features]
+plugin_hooks = true
+hooks = true
 memories = true
 
 ## 読み順

@@ -1,12 +1,12 @@
 ---
 name: project-bootstrap
-description: Concretize a new project from `docs/initial-brief.md` into `docs/project-metadata.yaml` and `docs/project-spec.md`. Use when starting from this template or when the project direction is still underspecified.
+description: Concretize a new project from `docs/initial-brief.md` into the frontmatter and body of `docs/project-spec.md`. Use when starting from this template or when the project direction is still underspecified.
 ---
 
 # Project Bootstrap
 
 このskillは、このテンプレートで実装前の基本文書を具体化するための手順です。
-方針は `docs-first` で、スタック未確定なら文書整理を優先します。
+方針は `docs-first` で、スタックが未確定なら文書整理を優先します。
 
 ## 前提
 - 最初に `docs/policy-index.yaml` を読む

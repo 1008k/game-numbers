@@ -1,38 +1,33 @@
-# 計算パネルパズル
+# Project Starter
 
-`計算パネルパズル` は、数字パネルと演算子パネルを消費しながら複数のターゲット数字を成立させる、スマホ向けの計算ロジックパズル企画です。
+このリポジトリは、実装へ進む前に仕様、設計方向、運用ルールを整理するための `docs-first` テンプレートです。
 
-このリポジトリは、Godot 4.x/GDScriptで実装へ進む前の仕様、デザイン方向、実装ルールを整理するdocs-firstの企画リポジトリです。現時点ではアプリ実装は含みません。
+コピー後は、まず `docs/initial-brief.md` にプロジェクトの初期情報を書き、方向が固まったら `docs/project-spec.md` を正本として具体化します。
 
 ## Overview
-- ジャンル: 数字パズル、ロジックパズル、脳トレ、カジュアルゲーム
-- 対象: iOS / Android
-- エンジン: Godot 4.x
-- 言語: GDScript
-- 画面方向: 縦固定
-- MVP: ターゲット3個、有限パネル、四則演算、ミス3回、広告復活1回
-
-## Core Idea
-- ターゲット数字を選ぶ。
-- 数字、演算子、数字の順にパネルを選んで式を作る。
-- 正解した式で使ったパネルは消費される。
-- すべてのターゲットを成立させるとステージクリア。
-
-本作の主軸は計算ドリルではなく、限られた数字リソースをどのターゲットへ配分するかを考えるリソース管理型ロジックパズルです。
+- 用途: 新規プロジェクトの仕様整理、実装前レビュー、エージェント作業の入口
+- 対象: Webアプリ、モバイルアプリ、ゲーム、CLI、ライブラリなど
+- 方針: 先に目的、対象、非目的、制約、完了条件を短く整理する
+- 状態: 汎用テンプレート
 
 ## Documents
 - `docs/policy-index.yaml`: 参照ハブと文書優先順位
-- `docs/project-spec.md`: 要件、仕様、MVP範囲、受け入れ条件の正本
-- `DESIGN.md`: 電卓風UI、画面パターン、視覚方向
-- `docs/rules-coding.md`: 実装判断とGodot/GDScript向けの最小ルール
+- `docs/initial-brief.md`: 仕様化前の初期メモ
+- `docs/project-spec.md`: 要件、仕様、非目的、受け入れ条件の正本
+- `DESIGN.md`: UIや体験を持つ案件のデザイン方向テンプレート
+- `docs/rules-coding.md`: 実装判断の最小ルール
 - `docs/rules-ux.md`: UI/UX判断基準
-- `ARCHITECTURE.md`: 想定シーン、スクリプト、責務分割
+- `docs/rules-writing.md`: 文書表記ルール
+- `ARCHITECTURE.md`: 実装構造、責務分割、依存関係の整理先
+- `docs/integrations/`: 任意拡張や補助運用の判断メモ
 - `docs/tracks/`: 大きめの変更の作業文脈
 
-## Current Status
-- 仕様整理中。
-- 実装スタックはGodot 4.x/GDScriptを前提にする。
-- 広告SDK、課金、ストア公開、初期ステージ数、スコア計算は未確定。
+## How To Start
+1. `docs/initial-brief.md` を埋める。
+2. 未確定事項を分ける。
+3. `docs/project-spec.md` をプロジェクトの正本として更新する。
+4. 実装スタックが決まったら、必要最小限の技術固有ルールを `docs/rules-coding.md` や `ARCHITECTURE.md` に追加する。
+5. UIがある場合は、`DESIGN.md` と `docs/rules-ux.md` を更新する。
 
 ## Agent Workflow
 - 最初に `docs/policy-index.yaml` を読み、参照先と優先順位を確認する。

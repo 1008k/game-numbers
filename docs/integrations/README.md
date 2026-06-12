@@ -28,6 +28,7 @@
 
 ## 既存メモ
 - `mcp-baseline.md`: 汎用案件で最初に検討しやすい基本MCP
+- `context-tools.md`: Serena / Context7 / Headroom / Context Mode などのコンテキスト削減系ツールを試すための補助メモ
 - `gitmcp.md`: 外部GitHubリポジトリや文書参照の補助
 - `modern-web-guidance.md`: ブラウザ向けUI案件で、最新のWeb Platform実践を参照する導入候補
 - Markdown 文書が増えて横断参照のコストが目立ってきたら、`markdown-query` のような局所検索系skillの導入を検討する
