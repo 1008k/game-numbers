@@ -31,6 +31,7 @@
 - `context-tools.md`: Serena / Context7 / Headroom / Context Mode などのコンテキスト削減系ツールを試すための補助メモ
 - `gitmcp.md`: 外部GitHubリポジトリや文書参照の補助
 - `modern-web-guidance.md`: ブラウザ向けUI案件で、最新のWeb Platform実践を参照する導入候補
+- `okf.md`: MarkdownとYAML frontmatterで知識カタログを作る任意フォーマット候補
 - Markdown 文書が増えて横断参照のコストが目立ってきたら、`markdown-query` のような局所検索系skillの導入を検討する
 - `openmemory-lite.md`: 軽量なローカルメモリ拡張
 - `skills.md`: repo内にskillを追加すべき条件と `AGENTS.md` / MCP との切り分け
