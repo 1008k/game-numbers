@@ -2,12 +2,6 @@
 
 エージェント向けの短い入口です。最初に `docs/policy-index.yaml` を読み、参照先と優先順位を解決します。
 
-<!-- CODEX向けの設定 https://developers.openai.com/codex/memories  -->
-[features]
-plugin_hooks = true
-hooks = true
-memories = true
-
 ## 読み順
 - `docs/policy-index.yaml`
 - 以降は `policy.authority.precedence` を優先し、通常は `policy.operating_model.default_read_path` の順で必要な分だけ読む

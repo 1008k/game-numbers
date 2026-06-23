@@ -34,4 +34,4 @@
 - `okf.md`: MarkdownとYAML frontmatterで知識カタログを作る任意フォーマット候補
 - Markdown 文書が増えて横断参照のコストが目立ってきたら、`markdown-query` のような局所検索系skillの導入を検討する
 - `openmemory-lite.md`: 軽量なローカルメモリ拡張
-- `skills.md`: repo内にskillを追加すべき条件と `AGENTS.md` / MCP との切り分け
+- `skills.md`: 常時ルール、パス限定ルール、skill、subagent、hook、automation、MCPの切り分け

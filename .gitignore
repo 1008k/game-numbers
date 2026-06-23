@@ -28,3 +28,8 @@ venv/
 .DS_Store
 .vscode/
 .idea/
+.mcp.json
+.claude/settings.local.json
+.serena/
+.agentsroom/handoff-transcript-*.txt
+.agentsroom/handoff-summary-*.md
