@@ -24,6 +24,11 @@ __pycache__/
 .venv/
 venv/
 
+# Godot
+.godot/
+*.translation
+export_presets.cfg
+
 # OS & Editor
 .DS_Store
 .vscode/

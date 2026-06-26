@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="128" height="128" viewBox="0 0 128 128">
+  <rect width="128" height="128" rx="24" fill="#18212f"/>
+  <rect x="18" y="18" width="92" height="28" rx="8" fill="#76f7c8"/>
+  <text x="64" y="39" text-anchor="middle" font-family="Arial, sans-serif" font-size="20" font-weight="700" fill="#18212f">12</text>
+  <g fill="#f4f7fb">
+    <rect x="20" y="58" width="22" height="22" rx="6"/>
+    <rect x="53" y="58" width="22" height="22" rx="6"/>
+    <rect x="86" y="58" width="22" height="22" rx="6"/>
+    <rect x="20" y="90" width="22" height="22" rx="6"/>
+    <rect x="53" y="90" width="22" height="22" rx="6"/>
+    <rect x="86" y="90" width="22" height="22" rx="6"/>
+  </g>
+  <text x="31" y="74" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="700" fill="#18212f">3</text>
+  <text x="64" y="74" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="700" fill="#18212f">×</text>
+  <text x="97" y="74" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="700" fill="#18212f">4</text>
+  <text x="31" y="106" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="700" fill="#18212f">5</text>
+  <text x="64" y="106" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="700" fill="#18212f">+</text>
+  <text x="97" y="106" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="700" fill="#18212f">2</text>
+</svg>

@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://calc_panel_panel_button"]
+
+[ext_resource type="Script" path="res://scripts/panel_button.gd" id="1_panel"]
+
+[node name="PanelButton" type="Button"]
+custom_minimum_size = Vector2(72, 64)
+script = ExtResource("1_panel")
+
