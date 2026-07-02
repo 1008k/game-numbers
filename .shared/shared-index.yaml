@@ -1,0 +1,27 @@
+# managed-by: shared-reference
+# source-path: shared-index.yaml
+version: 1
+source_repo: https://github.com/1008k/shared-reference.git
+
+sources:
+  shared_docs_directory: .shared/docs/
+  shared_rules:
+    coding: .shared/docs/rules-coding.md
+    ux: .shared/docs/rules-ux.md
+    writing: .shared/docs/rules-writing.md
+  shared_skills_index: .shared/skills/skills-index.md
+  shared_skills_directory: .shared/skills/
+
+policy:
+  role: shared-baseline-reference
+  precedence: lower-than-project-docs
+  editing:
+    managed_by: shared-reference
+    do_not_edit_vendor_copy: true
+    propose_change_command: scripts/propose-shared-reference-change.ps1
+  skill_discovery:
+    shared_skills_are_vendored_under: .shared/skills/
+    project_specific_or_discovery_shims: .agents/skills/
+  local_overrides:
+    rules: docs/rules-*.md
+    skills: .agents/skills/
