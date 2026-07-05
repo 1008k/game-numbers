@@ -23,6 +23,7 @@ if (!$SharedRepo) { $SharedRepo = Read-LockValue $LockPath "local_path" }
 if (!$SharedRepo) { $SharedRepo = Join-Path $CloneRoot "shared-reference" }
 if (![IO.Path]::IsPathRooted($SharedRepo)) { $SharedRepo = Join-Path $ProjectRoot $SharedRepo }
 $SharedRepo = [IO.Path]::GetFullPath($SharedRepo)
+if (!$Ref) { $Ref = Read-LockValue $LockPath "ref" }
 
 if (!(Test-Path $SharedRepo)) {
   $repoUrl = Read-LockValue $LockPath "repo"
