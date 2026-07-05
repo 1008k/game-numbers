@@ -44,10 +44,13 @@
 ## 任意の拡張運用
 - 判断材料は `docs/integrations/README.md` と `docs/integrations/` 配下を参照します。
 - 共有参照の同期状態は `.shared/shared-index.yaml` と `.shared/shared-reference.lock.yaml` を確認します。
+- 共有由来の判断材料は `.shared/shared-index.yaml` を入口にし、skillや補助運用の導入判断は `.shared/skills/skills-index.md` を参照します。
+- `.shared/docs/` と `.shared/skills/` の共有管理ファイルは直接編集せず、`scripts/propose-shared-reference-change.ps1` で `shared-reference` 側の正本を更新してから同期します。
+- 共有skillは `.shared/skills/` にvendor同期されます。CodexやClaude Codeの標準探索先へは実体コピーを置かず、必要に応じて `scripts/setup-agent-skill-links.ps1` でリンクを生成します。
 - MCP、hooks、subagents、automation、memory などを追加するときは、目的、影響範囲、必要権限、外部通信、失敗時の扱いを明確にします。
 - UX境界、セキュリティ境界、監査境界に触れる運用は、明示的な確認やガードレールを前提にします。
 - repo固有の永続設定が必要になってから `.codex/config.toml` を追加します。
-- 同じ手順を繰り返すようになったら `.agents/skills/` への切り出しを検討します。
+- 同じ手順を繰り返すようになったら、プロジェクト固有skillは `.agents/skills/`、共有化したいskillは `shared-reference` 側への切り出しを検討します。
 
 ## トークン効率
 - 品質を落とさず、正本から読み、必要な分だけ探索を広げます。

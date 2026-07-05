@@ -27,6 +27,7 @@
 - `docs/rules-coding.md`: 実装判断とGodot/GDScript向けの最小ルール
 - `docs/rules-ux.md`: UI/UX判断基準
 - `docs/rules-writing.md`: 文書表記ルール
+- `docs/shared-reference.md`: 共有docs/skillの同期、変更提案、リンク生成運用
 - `ARCHITECTURE.md`: 想定シーン、スクリプト、責務分割
 - `docs/integrations/`: 任意拡張や補助運用の判断メモ
 - `docs/tracks/`: 大きめの変更の作業文脈
@@ -55,6 +56,7 @@
 - 仕様判断は `docs/project-spec.md` を優先する。
 - UIや画面生成は `DESIGN.md` と `docs/rules-ux.md` を参照する。
 - 実装構造や責務分割は `ARCHITECTURE.md` と `docs/rules-coding.md` を参照する。
+- 共有skillをCodexやClaude Codeの探索先へ出す場合は `scripts/setup-agent-skill-links.ps1` を使う。
 - 仕様、設計、運用に影響する大きめの変更では `docs/tracks/` に作業文脈を残す。
 
 ## Maintenance Notes

@@ -66,6 +66,7 @@
 - リポジトリ内に置いた方が、外部参照より判断が速い
 
 ## 記録先
-- リポジトリ固有skillは `.agents/skills/<skill-name>/SKILL.md`
+- 共有skillの正本は `.shared/skills/` にvendor同期し、CodexやClaude Codeの探索先へは `scripts/setup-agent-skill-links.ps1` でリンクを生成する
+- リポジトリ固有skillは、共有化しない理由がある場合だけ `.agents/skills/<skill-name>/SKILL.md` など各エージェントの標準探索先に置く
 - skill追加の背景や補足判断は、必要ならこのディレクトリや `docs/tracks/` に残す
 - 短い恒久ルールへ落とし込める部分は、必要に応じて `AGENTS.md` へ戻す
