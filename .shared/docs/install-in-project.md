@@ -5,6 +5,8 @@
 
 Use these prompts with a coding agent when installing `shared-reference` into an existing project or updating an already adopted project.
 
+Policy freshness is not checked during ordinary project work. Use the opt-in `update-project-policy` skill only when a policy review or update is explicitly requested. Every invocation first reports proposed changes and stops; a later user message must approve that presented scope before files are changed.
+
 ## Install Prompt
 
 Use this when the project does not have `.shared/shared-reference.lock.yaml` yet.
@@ -39,10 +41,12 @@ Use this when the project does not have `.shared/shared-reference.lock.yaml` yet
 ```txt
 .shared/shared-reference.lock.yaml
 .shared/shared-index.yaml
+.shared/docs/agent-operating-model.md
 .shared/docs/rules-coding.md
 .shared/docs/rules-ux.md
 .shared/docs/rules-writing.md
 .shared/skills/skills-index.md
+.shared/skills/update-project-policy/SKILL.md
 scripts/sync-shared-reference.ps1
 scripts/propose-shared-reference-change.ps1
 ```
@@ -56,6 +60,10 @@ scripts/propose-shared-reference-change.ps1
 
 ## Project Docs
 
+- 既存の `AGENTS.md` と `docs/policy-index.yaml` があれば、プロジェクト固有の記述を適切な正本文書へ保持したまま共有ポリシーへの入口を最小限追加・調整する。存在しない場合だけ新規作成する。
+- `docs/policy-index.yaml` のrequired readに `.shared/docs/agent-operating-model.md` を追加する。`AGENTS.md` はpolicy-indexへの案内だけにし、共有ルールやプロジェクト固有ルールを置かない。
+- policy-indexは実在文書のパス、役割、読み順、優先順位だけにする。共有相当のルールは削除し、より厳密な安全、監査、報告条件などの固有ルールは適切な正本文書、なければ `docs/project-spec.md` へ移す。このために `README.md` を一律変更しない。
+- `docs/tracks/README.md` または `CHANGELOG.md` がなければ、最小の標準文書として作成する。
 - `docs/rules-coding.md`, `docs/rules-ux.md`, `docs/rules-writing.md` はプロジェクト固有の入口として残す。
 - 各ファイルから共有ルールを参照する。
 
@@ -63,8 +71,9 @@ scripts/propose-shared-reference-change.ps1
 共有ルールは `.shared/docs/rules-coding.md` を基本として参照します。
 ```
 
-- `AGENTS.md` に、共有管理ファイルは直接編集せず `scripts/propose-shared-reference-change.ps1` を使う旨を追記する。
-- `docs/policy-index.yaml` がある場合は、`.shared/shared-index.yaml` と `.shared/shared-reference.lock.yaml` を sources または policy に追加し、優先順位はプロジェクト固有 docs が共有版を上書きする形にする。
+- `docs/policy-index.yaml` から `.shared/shared-index.yaml`、`.shared/shared-reference.lock.yaml`、`.shared/skills/update-project-policy/SKILL.md` を必要時に辿り、`.shared/docs/agent-operating-model.md` はrequired readに置く。優先順位はプロジェクト固有docsが共有版を上書きする形にする。
+- 通常作業ではポリシーの鮮度確認や更新を行わない。必要なときだけ `update-project-policy` skillを明示的に呼び出す。最初の依頼が更新指示でも必ずreport-onlyで停止するため、結果を確認した後の別メッセージで提示範囲の適用を依頼する。
+- この運用のために自動同期、CIやhooksによる鮮度確認、定期実行、バックグラウンド処理を追加しない。
 
 ## Verify
 
@@ -76,6 +85,10 @@ scripts/propose-shared-reference-change.ps1
 ## Done When
 
 - `.shared/` に共有 docs / skills が同期されている。
+- `.shared/docs/agent-operating-model.md` と `.shared/skills/update-project-policy/SKILL.md` が同期されている。
+- `AGENTS.md` から `docs/policy-index.yaml` へ進み、そこから共有ポリシーと更新skillを必要時に辿れる。
+- `docs/policy-index.yaml` のrequired readに `.shared/docs/agent-operating-model.md` があり、AGENTSはpolicy-indexへの案内だけ、policy-indexは文書地図だけを持つ。
+- `docs/tracks/README.md` と `CHANGELOG.md` が存在する。
 - lock file が `https://github.com/1008k/shared-reference.git` と commit SHA を記録している。
 - プロジェクト固有ルールが失われていない。
 - 共有版で代替できる古い重複ルールや skill が整理されている。
@@ -93,9 +106,13 @@ scripts/propose-shared-reference-change.ps1
 
 `shared-reference/scripts/adopt-shared-reference.ps1` を使って `.shared/` へ vendor 同期し、`.shared/shared-reference.lock.yaml`、`.shared/shared-index.yaml`、`.shared/docs/rules-*.md`、`.shared/skills/skills-index.md`、`scripts/sync-shared-reference.ps1`、`scripts/propose-shared-reference-change.ps1` を導入してください。
 
+`.shared/docs/agent-operating-model.md` と `.shared/skills/update-project-policy/SKILL.md` も同期対象です。`AGENTS.md` は `docs/policy-index.yaml` への案内だけ、policy-indexは実在文書のパス、役割、読み順、優先順位だけにしてください。共有vendor pathはpolicy-indexから必要時に辿ります。通常作業ではポリシー更新を確認せず、自動同期、CI、hooks、定期処理、バックグラウンド処理を追加しません。skillは最初の依頼が更新指示でも必ずreport-onlyで停止し、提示内容を確認した後の別メッセージで適用を依頼します。
+
 既存のプロジェクト固有ルールや skill は無条件に消さず、共有版で代替できる一般論・古い運用メモ・重複 skill だけ削除または短縮してください。プロジェクト固有の仕様、互換性、ドメイン知識、公開仕様は残してください。
 
-`AGENTS.md` と `docs/rules-*.md`、必要なら `docs/policy-index.yaml` を更新し、プロジェクト固有 docs が共有版を上書きする構造にしてください。
+既存の `AGENTS.md` と `docs/policy-index.yaml` は、プロジェクト固有の記述を適切な正本文書へ保持したまま共有ポリシーへの入口だけを最小限追加・調整し、存在しない場合だけ新規作成してください。`docs/rules-*.md` も保持し、プロジェクト固有docsが共有版を上書きする構造にしてください。
+
+policy-indexのrequired readに `.shared/docs/agent-operating-model.md` を追加してください。`AGENTS.md` はpolicy-indexへの案内だけ、policy-indexは実在文書のパス、役割、読み順、優先順位だけにしてください。共有相当のルールはローカル入口から削除し、プロジェクト固有のルールは適切な正本文書、なければ `docs/project-spec.md` へ移してください。`docs/tracks/README.md` と `CHANGELOG.md` がなければ最小ファイルを作成し、このために `README.md` を一律変更しないでください。
 
 最後に `scripts/sync-shared-reference.ps1 -DryRun`、`scripts/propose-shared-reference-change.ps1 -VendorPath .shared/shared-index.yaml`、`git diff --check` を確認し、問題なければコミット・push してください。
 ```
@@ -124,6 +141,7 @@ Use this when the project already has `.shared/shared-reference.lock.yaml`.
 2. `.shared/shared-reference.lock.yaml` を読み、source repo、local path、現在の ref、disabled entries を確認する。
 3. `docs/policy-index.yaml` があれば読み、`.shared/shared-index.yaml` の参照と優先順位を確認する。
 4. 既存の未コミット変更がある場合は巻き戻さず、今回の同期差分と混ぜてよいか慎重に判断する。
+5. 更新対象refの共有モデルが現在のローカルpolicy-indexと異なるschemaを要求するか確認する。
 
 ## Update
 
@@ -138,16 +156,22 @@ git -C ..\shared-reference pull --ff-only
 $ref = git -C ..\shared-reference rev-parse HEAD
 ```
 
-- 導入先プロジェクトで dry-run してから同期する。
+- schema変更がなければ、導入先プロジェクトでdry-runしてから同期する。
 
 ```powershell
 scripts\sync-shared-reference.ps1 -Ref $ref -DryRun
 scripts\sync-shared-reference.ps1 -Ref $ref
 ```
 
+schema変更がある場合はvendor同期を実行せず、共有repo側の `update-project-policy` skillを使って、共有ref、`AGENTS.md`、policy-index、canonical Markdownを同じ変更単位で移行するreport-only候補を提示して停止する。後続メッセージで承認されたapplyの中でのみ、dry-run、vendor同期、ローカル移行をまとめて行う。旧schemaの互換キーは追加しない。
+
+schema変更がなく、ローカル文書も共有基準と照合したい場合だけ、同期後に `update-project-policy` skillを明示的に呼び出す。最初の依頼が更新指示でもreport-onlyの結果を提示して停止するため、その内容を確認し、変更が必要なら後続メッセージで提示範囲の適用を依頼する。
+
+この運用のために自動同期、CIやhooksによる鮮度確認、定期実行、バックグラウンド処理を追加しない。
+
 ## Cleanup
 
-- 同期後、共有版で代替できる一般論、古い運用メモ、重複 skill がプロジェクト固有 docs / `.agents/skills/` に残っていれば削除または短縮する。
+- 承認済みのpolicy applyに含まれる場合だけ、共有版で代替できる一般論、古い運用メモ、重複skillをプロジェクト固有docs / `.agents/skills/` から削除または短縮する。vendor同期だけの依頼では候補の報告に留める。
 - プロジェクト固有の仕様、互換性、ドメイン知識、公開仕様、既存UI/保存形式に関わるルールは残す。
 - `disabled` entries がある場合は、今回の更新後も除外理由が妥当か確認する。
 - managed file を変更したくなった場合は、`.shared/` を直接編集せず `scripts/propose-shared-reference-change.ps1 -VendorPath <path>` で共有 repo 側へ変更を作る。
@@ -163,6 +187,10 @@ scripts\sync-shared-reference.ps1 -Ref $ref
 
 - `.shared/shared-reference.lock.yaml` の ref が取り込んだ commit SHA に更新されている。
 - `.shared/` の managed docs / skills が同期されている。
+- ローカルの `AGENTS.md` から `docs/policy-index.yaml` へ進み、そこから共有ポリシーと更新skillを必要時に辿れる。
+- ポリシー更新を依頼した場合は、report-onlyの候補を確認してからローカル入口へ適用されている。
+- ポリシー更新を依頼した場合は、共有モデルがrequired readにあり、AGENTSはpolicy-indexへの案内だけ、policy-indexは文書地図だけを持つ。
+- ポリシー更新を依頼した場合は、`docs/tracks/README.md` と `CHANGELOG.md` が存在する。
 - プロジェクト固有ルールが失われていない。
 - 共有版で代替できる古い重複ルールや skill が整理されている。
 - `policy-index.yaml` / `AGENTS.md` / `docs/rules-*.md` の参照が矛盾していない。
@@ -177,9 +205,13 @@ scripts\sync-shared-reference.ps1 -Ref $ref
 
 まず git 状態、remote、`.shared/shared-reference.lock.yaml`、`docs/policy-index.yaml`、`AGENTS.md`、`docs/rules-*.md`、既存 `.agents/skills/` を確認してください。
 
-`shared-reference` repo を最新の `main` に更新し、その commit SHA を使って `scripts/sync-shared-reference.ps1 -Ref <commit> -DryRun`、問題なければ `scripts/sync-shared-reference.ps1 -Ref <commit>` を実行してください。
+`shared-reference` repoを最新の `main` に更新し、更新対象refの共有モデルが現在のローカルpolicy-indexと異なるschemaを要求するか確認してください。schema変更がなければ、そのcommit SHAを使って `scripts/sync-shared-reference.ps1 -Ref <commit> -DryRun`、問題なければ `scripts/sync-shared-reference.ps1 -Ref <commit>` を実行してください。
 
-同期後、共有版で代替できる一般論・古い運用メモ・重複 skill がプロジェクト固有 docs や `.agents/skills/` に残っていれば削除または短縮してください。プロジェクト固有の仕様、互換性、ドメイン知識、公開仕様は残してください。
+schema変更がある場合はvendor同期を行わず、共有repo側の `.agents/skills/update-project-policy/SKILL.md` を使い、共有refとローカル入口を同じ変更単位で移行するreport-only候補を提示して停止してください。後続メッセージで承認されたapplyの中でだけdry-run、vendor同期、ローカル移行を行い、旧schemaの互換キーは追加しないでください。
+
+schema変更がなく、ローカルの `AGENTS.md` と `docs/policy-index.yaml` も共有基準へ更新する依頼の場合だけ、同期後に `.shared/skills/update-project-policy/SKILL.md` を使ってreport-onlyの候補を提示してください。共有モデルをrequired readに置き、AGENTSはpolicy-indexへの案内だけ、policy-indexは実在文書のパス、役割、読み順、優先順位だけにしてください。共有相当のルールは削除候補、プロジェクト固有の条件はcanonical Markdownへの移動候補として示し、標準のtrack・CHANGELOGがなければ作成候補に含めてください。提示内容を確認した後の別メッセージで承認されるまで適用せず、自動同期、CI、hooks、定期処理、バックグラウンド処理を追加しないでください。
+
+承認済みのpolicy applyに含まれる場合だけ、共有版で代替できる一般論・古い運用メモ・重複skillを削除または短縮してください。vendor同期だけの依頼では変更せず候補を報告し、プロジェクト固有の仕様、互換性、ドメイン知識、公開仕様は残してください。
 
 managed file を変更したくなった場合は `.shared/` を直接編集せず、`scripts/propose-shared-reference-change.ps1 -VendorPath <path>` で共有 repo 側へ変更してください。
 

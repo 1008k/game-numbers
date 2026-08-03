@@ -1,11 +1,11 @@
-version: 1
+﻿version: 1
 source:
   repo: https://github.com/1008k/shared-reference.git
   local_path: ../shared-reference
-  ref: 77d4c0f939c49c5c58227a5b3e5c79e226ca5495
+  ref: 857c7508ea4a6b2812e17945e6ddc17f9617ac13
 managed:
   - .shared/shared-index.yaml
   - .shared/docs/
   - .shared/skills/
 disabled: []
-last_synced_at: 2026-07-02T08:49:19Z
+last_synced_at: 2026-08-03T13:55:16Z

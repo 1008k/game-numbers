@@ -5,12 +5,14 @@ source_repo: https://github.com/1008k/shared-reference.git
 
 sources:
   shared_docs_directory: .shared/docs/
+  agent_operating_model: .shared/docs/agent-operating-model.md
   shared_rules:
     coding: .shared/docs/rules-coding.md
     ux: .shared/docs/rules-ux.md
     writing: .shared/docs/rules-writing.md
   shared_skills_index: .shared/skills/skills-index.md
   shared_skills_directory: .shared/skills/
+  project_policy_update_skill: .shared/skills/update-project-policy/SKILL.md
 
 policy:
   role: shared-baseline-reference
