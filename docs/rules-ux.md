@@ -1,6 +1,6 @@
 # UI/UXルール
 
-共有ルールは `.shared/docs/rules-ux.md` を基本として参照します。
+共有基準は `AGENTS.md` に従い、中央 `1008k/shared-reference` の必要な文書を参照します。
 
 この文書は、`game-numbers` 固有の体験判断だけを残す入口です。画面ごとの仕様は `docs/project-spec.md`、持ち運ぶデザイン方向は `DESIGN.md` を正本にします。
 
