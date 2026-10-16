@@ -1,21 +1,5 @@
 # Contributing
 
-このリポジトリへの変更提案時の基本方針です。
-実装判断やコーディングルールは `docs/rules-coding.md` を参照してください。
+Issue / Pull Request / review / merge の共通基準は、中央 `1008k/shared-reference` の `CONTRIBUTING.md` を参照します。
 
-## Pull Requests
-- 変更理由を明記する
-- 関連する文書があれば一緒に更新する
-- ライセンスや公開ポリシーに関わる変更は、意図を明示する
-- 例外的に生成物や生成コードを Git 管理する場合は、理由と更新方法を明記する
-- コミットメッセージは簡潔にし、変更意図が分かるようにする
-
-## Before Merging
-- 文書間の矛盾がないことを確認する
-- 不要な生成物や機密情報が含まれていないことを確認する
-- Git 管理対象が、プロジェクトの再現性や共有運用に必要なものに収まっていることを確認する
-- 必要なら `CHANGELOG.md` を更新する
-- `CHANGELOG.md` の書き方は `docs/rules-writing.md` に従う
-
-## Related Files
-- 全体構成や関連ファイルの一覧は `README.md` を参照してください。
+このリポジトリ固有の実装判断は `docs/rules-coding.md`、文書表記は `docs/rules-writing.md` に従います。仕様・設計・実装の変更時は対応する正本文書を更新します。
