@@ -1,6 +1,6 @@
 # コーディングルール
 
-共有ルールは `.shared/docs/rules-coding.md` を基本として参照します。
+共有基準は `AGENTS.md` に従い、中央 `1008k/shared-reference` の必要な文書を参照します。
 
 この文書は、`game-numbers` 固有の実装判断だけを残す入口です。優先順位と読み順は `docs/policy-index.yaml`、仕様は `docs/project-spec.md`、構造は `ARCHITECTURE.md`、実行方法は `README.md` を参照します。
 
