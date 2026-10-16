@@ -1,9 +1,7 @@
 documents:
-  entry: AGENTS.md
-  policy_hub: docs/policy-index.yaml
-  readme: README.md
   project_spec: docs/project-spec.md
   initial_brief: docs/initial-brief.md
+  readme: README.md
   coding_rules: docs/rules-coding.md
   ux_rules: docs/rules-ux.md
   writing_rules: docs/rules-writing.md
@@ -11,56 +9,28 @@ documents:
   architecture: ARCHITECTURE.md
   contributing: CONTRIBUTING.md
   changelog: CHANGELOG.md
-  shared_reference_operations: docs/shared-reference.md
   tracks: docs/tracks/
   integrations: docs/integrations/
-  shared_index: .shared/shared-index.yaml
-  shared_lock: .shared/shared-reference.lock.yaml
-  shared_operating_model: .shared/docs/agent-operating-model.md
-  shared_rules:
-    coding: .shared/docs/rules-coding.md
-    ux: .shared/docs/rules-ux.md
-    writing: .shared/docs/rules-writing.md
-  shared_skills_index: .shared/skills/skills-index.md
-  shared_skills_directory: .shared/skills/
 
 precedence:
-  - docs/policy-index.yaml
   - docs/project-spec.md
   - docs/rules-coding.md
   - docs/rules-ux.md
   - DESIGN.md
   - docs/rules-writing.md
-  - README.md
   - ARCHITECTURE.md
   - CONTRIBUTING.md
+  - README.md
   - CHANGELOG.md
   - docs/tracks/
   - docs/integrations/
-  - .shared/shared-index.yaml
-  - .shared/docs/
-  - .shared/skills/
 
 read_path:
   required:
-    - .shared/docs/agent-operating-model.md
-  default:
-    - .shared/shared-index.yaml
     - docs/project-spec.md
-    - docs/rules-coding.md
-    - .shared/docs/rules-coding.md
-    - docs/rules-ux.md
-    - .shared/docs/rules-ux.md
-    - DESIGN.md
-    - docs/rules-writing.md
-    - .shared/docs/rules-writing.md
+  default:
     - README.md
-    - ARCHITECTURE.md
   situational:
-    policy_or_shared_reference:
-      - docs/shared-reference.md
-      - .shared/shared-reference.lock.yaml
-      - .shared/skills/skills-index.md
     specification_or_acceptance:
       - docs/project-spec.md
     implementation:
@@ -78,8 +48,8 @@ read_path:
       - docs/integrations/
       - CONTRIBUTING.md
   avoid_up_front:
-    - .shared/docs/
-    - .shared/skills/
+    - ARCHITECTURE.md
+    - DESIGN.md
     - docs/tracks/
     - docs/integrations/
     - CONTRIBUTING.md
