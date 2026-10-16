@@ -1,6 +1,6 @@
 # 文書表記ルール
 
-共有ルールは `.shared/docs/rules-writing.md` を基本として参照します。
+共有基準は `AGENTS.md` に従い、中央 `1008k/shared-reference` の必要な文書を参照します。
 
 この文書は、`game-numbers` 固有の表記判断だけを残す入口です。優先順位は `docs/policy-index.yaml`、仕様用語は `docs/project-spec.md`、利用者向け入口は `README.md` を参照します。
 
