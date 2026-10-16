@@ -63,3 +63,7 @@
 - READMEには入口情報だけを置き、仕様詳細は `docs/project-spec.md` に集約する。
 - セットアップ、実行、テスト、ビルド手順は実装の進行に合わせてこのREADMEへ追記する。
 - 実装構造が変わったら `ARCHITECTURE.md` を更新する。
+
+### 旧共有Skillリンクの片付け（既存checkoutのみ）
+
+以前 `scripts/setup-agent-skill-links.ps1` を実行した環境には、Git管理外の `.agents/skills/` や `.claude/skills/` に古い `.shared/skills/` へのリンクが残ることがあります。移行後はリンク先がなくなるため、両ディレクトリで**リンク先がこのリポジトリの `.shared/skills/` を指すものだけ**確認して手動削除してください。実ディレクトリや別の参照先へのリンクは削除しません。共有Skillは今後 `AGENTS.md` に記載した中央参照方式で使用します。
